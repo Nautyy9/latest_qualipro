@@ -160,8 +160,8 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`${scrolled ? '' : 'text-base'} font-medium transition-all duration-300 relative hover:text-oklch-primary-base`}
-                  style={{ color: isActive(link.path) ? 'var(--color-primary-base)' : 'var(--color-text-gray)' }}
+                  className={`${scrolled ? '' : 'text-base'} font-medium transition-all duration-300 relative hover:text-oklch-primary-base ${isActive(link.path) ? 'text-oklch-primary-base' : 'font-medium text-gray-700'}`}
+
                 >
                   {link.name}
                   {isActive(link.path) && (
@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/contact"
-                className={`${scrolled ? 'px-6 py-3 ' : 'px-6 xl:px-8 py-3'} rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg text-white bg-oklch-primary-base hover:bg-oklch-primary-deepest`}
+                className={`${scrolled ? 'px-6 py-3 ' : 'px-6 xl:px-8 py-3'} rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg text-white bg-oklch-primary-base hover:bg-oklch-primary-deepest flex items-center`}
 
               >
                 Get Started

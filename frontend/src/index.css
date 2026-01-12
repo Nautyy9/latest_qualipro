@@ -77,41 +77,41 @@ span, p , h1 , h2, h3, h4, h5, h6 {
 @layer components {
   :root {
     /* Background Colors */
-    --color-bg-primary: oklch(0.97 0.013 258); /* slate-100 */
-    --color-bg-light: oklch(0.98 0.003 0); /* white-50 / off-white */
-    --color-bg-light-blue: oklch(0.97 0.01 259); /* blue-50 */
-    
+    --color-bg-primary: 0.97 0.013 258; /* slate-100 */
+    --color-bg-light: 0.98 0.003 0; /* white-50 / off-white */
+    --color-bg-light-blue: 0.97 0.01 259; /* blue-50 */
+
     /* Border Colors */
-    --color-border-primary: oklch(0.89 0.04 259); /* blue-200 */
-    --color-border-light: oklch(0.90 0.01 0); /* gray-100 */
-    
+    --color-border-primary: 0.89 0.04 259; /* blue-200 */
+    --color-border-light: 0.90 0.01 0; /* gray-100 */
+
     /* Text Colors */
     --color-text-dark: #202020; /* gray-900 */
-    --color-text-dark-alt: oklch(0.28 0.01 0); /* gray-900 */
-    --color-text-gray: oklch(0.57 0.02 0); /* gray-600 */
-    --color-text-light-gray: oklch(0.87 0.02 0); /* gray-200 */
-    
+    --color-text-dark-alt: 0.28 0.01 0; /* gray-900 */
+    --color-text-gray: 0.57 0.02 0; /* gray-600 */
+    --color-text-light-gray: 0.87 0.02 0; /* gray-200 */
+
     /* Primary Blue Palette */
-    --color-primary-bright: oklch(0.75 0.14 259); /* blue-400 */
-    --color-primary-base: oklch(0.60 0.15 259); /* blue-500 */
-    --color-primary-medium: oklch(0.65 0.12 259); /* blue-500 */
-    --color-primary-dark: oklch(0.55 0.15 259); /* blue-600 */
-    --color-primary-darker: oklch(0.50 0.16 259); /* blue-700 */
-    --color-primary-deepest: oklch(0.42 0.17 259); /* blue-800 */
-    
+    --color-primary-bright: 0.75 0.14 259; /* blue-400 */
+    --color-primary-base: 0.60 0.15 259; /* blue-500 */
+    --color-primary-medium: 0.65 0.12 259; /* blue-500 */
+    --color-primary-dark: 0.55 0.15 259; /* blue-600 */
+    --color-primary-darker: 0.50 0.16 259; /* blue-700 */
+    --color-primary-deepest: 0.42 0.17 259; /* blue-800 */
+
     /* Secondary/Light Blue Palette */
-    --color-secondary-light: oklch(0.91 0.04 259); /* blue-100 */
-    --color-secondary-lighter: oklch(0.85 0.08 259); /* blue-200 */
-    --color-secondary-lightest: oklch(0.90 0.05 259); /* blue-150 */
-    
+    --color-secondary-light: 0.91 0.04 259; /* blue-100 */
+    --color-secondary-lighter: 0.85 0.08 259; /* blue-200 */
+    --color-secondary-lightest: 0.90 0.05 259; /* blue-150 */
+
     /* Accent Orange Palette */
-    --color-accent-bright: oklch(0.63 0.26 29); /* orange-500 */
-    --color-accent-light: oklch(0.92 0.07 29); /* orange-100 */
-    --color-accent-medium: oklch(0.85 0.12 29); /* orange-200 */
-    
+    --color-accent-bright: 0.63 0.26 29; /* orange-500 */
+    --color-accent-light: 0.92 0.07 29; /* orange-100 */
+    --color-accent-medium: 0.85 0.12 29; /* orange-200 */
+
     /* Additional Colors */
-    --color-white-pure: oklch(0.99 0.01 0); /* white / off-white */
-    --color-purple-light: oklch(0.87 0.10 281); /* purple-200 */
+    --color-white-pure: 0.99 0.01 0; /* white / off-white */
+    --color-purple-light: 0.87 0.10 281; /* purple-200 */
   }
 }
 

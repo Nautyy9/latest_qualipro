@@ -41,14 +41,14 @@ const HeroSection: React.FC = () => {
               <div className="flex w-max flex-col sm:flex-row gap-4 ">
                 <Link
                   to="/services"
-                  className="text-oklch-white-pure px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-2 bg-oklch-primary-dark hover:bg-oklch-primary-darker"
+                  className="text-oklch-white-pure px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-2 bg-oklch-primary-dark hover:bg-oklch-primary-darker group/btn"
                 >
                   Our Services
-                  <ArrowRight size={20} />
+                  <ArrowRight size={20} className='group-hover/btn:translate-x-2 duration-300 transition-all group-hover/btn:-rotate-45 group-hover/btn:scale-110' />
                 </Link>
                 <Link
                   to="/contact"
-                  className="bg-transparent px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-oklch-primary-base border-2 border-oklch-primary-base hover:bg-oklch-secondary-lighter"
+                  className="bg-transparent px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-oklch-primary-base border-2 border-oklch-primary-base hover:bg-oklch-secondary-light"
                 >
                   Get Consultation
                   <Shield size={20} />
