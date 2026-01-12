@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                   <div className="flex items-center gap-x-4 rounded-full  py-4   h-full w-full backdrop-blur-md">
                     {navLinks.map((l) => (
                       <Link key={l.name} to={l.path}>
-                        <span className="rounded-full px-3 py-1 text-sm transition-colors text-oklch-text-gray hover:text-oklch-primary-base" onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary-base)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-gray)'}>{l.name}</span>
+                        <span className="rounded-full px-3 py-1 text-sm transition-colors text-oklch-text-gray hover:text-oklch-primary-base">{l.name}</span>
                       </Link>
                     ))}
                   </div>
@@ -129,8 +129,7 @@ const Navbar: React.FC = () => {
                   <button
                     className="rounded-full h-12 w-12 transition animate-fade-in-slow hover:text-white hover:bg-oklch-primary-base"
                     aria-label="Open navigation"
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--color-primary-base)'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+
                   >
                     <div className="flex flex-col items-center justify-center gap-1.5">
                       <span className="block h-[2px] w-7 bg-current group-hover:text-white rounded-full"></span>
@@ -144,7 +143,7 @@ const Navbar: React.FC = () => {
                         {navLinks.map((l, idx) => (
                           <div key={l.name} className="animate-drop-in" style={{ animationDelay: `${idx * 70}ms` }}>
                             <Link to={l.path}>
-                              <span className="block w-full text-center rounded-xl px-3 py-2 transition-colors text-oklch-text-dark-alt hover:bg-white/50" onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'oklch(0.95 0.001 0)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>{l.name}</span>
+                              <span className="block w-full text-center rounded-xl px-3 py-2 transition-colors text-oklch-text-dark-alt hover:bg-white/50">{l.name}</span>
                             </Link>
                           </div>
                         ))}
@@ -161,10 +160,8 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`${scrolled ? '' : 'text-base'} font-medium transition-all duration-300 relative`}
+                  className={`${scrolled ? '' : 'text-base'} font-medium transition-all duration-300 relative hover:text-oklch-primary-base`}
                   style={{ color: isActive(link.path) ? 'var(--color-primary-base)' : 'var(--color-text-gray)' }}
-                  onMouseEnter={(e) => !isActive(link.path) && (e.currentTarget.style.color = 'var(--color-primary-base)')}
-                  onMouseLeave={(e) => !isActive(link.path) && (e.currentTarget.style.color = 'var(--color-text-gray)')}
                 >
                   {link.name}
                   {isActive(link.path) && (
@@ -180,16 +177,13 @@ const Navbar: React.FC = () => {
               <Link
                 to="/contact"
                 className={`${scrolled ? 'px-6 py-3 ' : 'px-6 xl:px-8 py-3'} rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg text-white bg-oklch-primary-base hover:bg-oklch-primary-deepest`}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--color-primary-deepest)'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--color-primary-base)'}
+
               >
                 Get Started
               </Link>
               <Link
                 to="/contact"
-                className={`${scrolled ? 'px-6 py-3 ' : 'px-6 xl:px-8 py-3'} hidden lg:flex rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-oklch-primary-base text-oklch-primary-base hover:bg-oklch-secondary-lighter`}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-secondary-lighter)'; e.currentTarget.style.borderColor = 'var(--color-primary-base)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = 'var(--color-primary-base)'; }}
+                className={`${scrolled ? 'px-6 py-3 ' : 'px-6 xl:px-8 py-3'} hidden lg:flex rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-oklch-primary-base text-oklch-primary-base hover:bg-oklch-secondary-light`}
               >
                 Reach Out
               </Link>
@@ -245,7 +239,7 @@ const Navbar: React.FC = () => {
                       <img src={logo} alt="qualipro" className="h-8 w-8 object-contain" />
                       <span className="text-xl font-serif font-semibold text-oklch-text-dark-alt">QualiPro</span>
                     </div>
-                    <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="rounded-full p-2 anim-right-in transition-colors text-oklch-primary-base hover:bg-oklch-secondary-lighter" style={{ animationDelay: '180ms' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--color-secondary-lighter)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+                    <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="rounded-full p-2 anim-right-in transition-colors text-oklch-primary-base hover:bg-oklch-secondary-lighter" style={{ animationDelay: '180ms' }}>
                       <X size={20} />
                     </button>
                   </div>
@@ -255,25 +249,25 @@ const Navbar: React.FC = () => {
                     {/* Nav links */}
                     <nav className="flex flex-col gap-2 px-3 py-4">
                       <div className="animate-drop-in" style={{ animationDelay: '240ms' }}>
-                        <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/') ? 'var(--color-border-primary)' : 'transparent' }} onMouseEnter={(e) => !isActive('/') && (e.currentTarget.style.backgroundColor = 'oklch(0.99 0.003 0 / 0.85)')} onMouseLeave={(e) => !isActive('/') && (e.currentTarget.style.backgroundColor = 'transparent')}>
+                        <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/') ? 'var(--color-border-primary)' : 'transparent' }}>
                           <Home className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Home</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '310ms' }}>
-                        <Link to="/services" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/services') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/services') ? 'var(--color-border-primary)' : 'transparent' }} onMouseEnter={(e) => !isActive('/services') && (e.currentTarget.style.backgroundColor = 'oklch(0.99 0.003 0 / 0.85)')} onMouseLeave={(e) => !isActive('/services') && (e.currentTarget.style.backgroundColor = 'transparent')}>
+                        <Link to="/services" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/services') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/services') ? 'var(--color-border-primary)' : 'transparent' }}>
                           <Recycle className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Services</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '380ms' }}>
-                        <Link to="/about" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/about') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/about') ? 'var(--color-border-primary)' : 'transparent' }} onMouseEnter={(e) => !isActive('/about') && (e.currentTarget.style.backgroundColor = 'oklch(0.99 0.003 0 / 0.85)')} onMouseLeave={(e) => !isActive('/about') && (e.currentTarget.style.backgroundColor = 'transparent')}>
+                        <Link to="/about" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/about') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/about') ? 'var(--color-border-primary)' : 'transparent' }}>
                           <Briefcase className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">About</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '450ms' }}>
-                        <Link to="/contact" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/contact') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/contact') ? 'var(--color-border-primary)' : 'transparent' }} onMouseEnter={(e) => !isActive('/contact') && (e.currentTarget.style.backgroundColor = 'oklch(0.99 0.003 0 / 0.85)')} onMouseLeave={(e) => !isActive('/contact') && (e.currentTarget.style.backgroundColor = 'transparent')}>
+                        <Link to="/contact" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/contact') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/contact') ? 'var(--color-border-primary)' : 'transparent' }}>
                           <Phone className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Contact</span>
                         </Link>
