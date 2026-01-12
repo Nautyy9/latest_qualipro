@@ -121,11 +121,11 @@ const StatsSection: React.FC = () => {
       <div className="container-max">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <span className="inline-block mb-2 mx-auto rounded-full border border-sky-500 bg-white px-4 py-1 text-sm text-sky-700 shadow-lg shadow-blue-200/50">Our Stats •</span>
-          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: '#202020' }}>
+          <span className="inline-block mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Our Stats •</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark">
             Numbers That Speak Our <span className="text-red-600">Excellence</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#202020' }}>
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed text-oklch-text-dark">
             Our track record demonstrates our commitment to healthcare quality and
             successful partnerships with organizations across India.
           </p>
@@ -133,7 +133,7 @@ const StatsSection: React.FC = () => {
 
         {/* Stats Grid */}
         <motion.div
-          className="mx-16 grid grid-cols-1 bg-gradient-to-br from-blue-50/50 to-blue-100/50 p-4 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl"
+          className="mx-16 grid grid-cols-1 bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 p-4 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -147,29 +147,29 @@ const StatsSection: React.FC = () => {
                 className="group relative overflow-visible"
                 variants={itemVariants}
               >
-                <div className="bg-white h-60 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-blue-100 hover:border-neutral-200 transform hover:-translate-y-2">
+                <div className="bg-oklch-white-pure h-60 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-oklch-secondary-light hover:border-oklch-border-light transform hover:-translate-y-2">
                   {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-tr from-white to-sky-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-tr from-oklch-white-pure to-oklch-sky-base opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl`}></div>
 
                   {/* Content */}
                   <div className="flex flex-col h-full justify-start relative space-y-4">
                     {/* Icon */}
-                    <div className={`w-14 h-14 bg-blue-200/40 border border-blue-200/40 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="text-blue-600" size={28} />
+                    <div className={`w-14 h-14 bg-oklch-secondary-light/50 border border-oklch-secondary-light/50 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="text-oklch-primary-base" size={28} />
                     </div>
 
                     {/* Number */}
                     <div className="space-y-1">
-                      <div className="text-3xl font-bold text-gray-900">
+                      <div className="text-3xl font-bold text-oklch-text-dark">
                         <CounterNumber value={stat.number} duration={2} />
                       </div>
-                      <div className="font-semibold text-neutral-800 text-sm">
+                      <div className="font-semibold text-oklch-text-gray text-sm">
                         {stat.label}
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-neutral-600 text-xs leading-relaxed">
+                    <p className="text-oklch-text-gray text-xs leading-relaxed">
                       {stat.description}
                     </p>
                   </div>
@@ -182,18 +182,18 @@ const StatsSection: React.FC = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="bg-sgray rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-500 mb-4">
+            <h3 className="text-2xl font-bold text-oklch-primary-base mb-4">
               Join 500+ Healthcare Organizations Who Trust QualiPro
             </h3>
-            <p className="text-neutral-500 mb-6">
+            <p className="text-oklch-text-gray mb-6">
               Ready to become part of our success story? Let's discuss how we can help
               your organization achieve certification and operational excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+              <button className="btn-primary bg-oklch-primary-base text-oklch-white-pure hover:bg-oklch-primary-dark">
                 Schedule Consultation
               </button>
-              <button className="btn-secondary">
+              <button className="btn-secondary bg-oklch-white-pure text-oklch-primary-base border-oklch-primary-base hover:bg-oklch-secondary-light/50">
                 Download Case Studies
               </button>
             </div>

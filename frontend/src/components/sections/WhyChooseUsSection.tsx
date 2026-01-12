@@ -91,10 +91,13 @@ const WhyChooseUsSection: React.FC = () => {
           trigger: el,
           start: id === 0 ? 'top center+=70px' : id === 1 ? 'top center+=20px' : id === 2 ? 'top center-=40px' : "top center-=80px",
           onEnter: () => {
-            el.classList.replace("bg-oklch-gray-inactive", 'bg-oklch-primary-dark');
+            el.classList.replace("bg-oklch-white-pure", 'bg-oklch-primary-base');
+            el.classList.add('text-white');
             const check = el.querySelector('.js-check') as HTMLElement | null;
             const stars = el.querySelectorAll('.js-star');
             if (check) {
+              check.classList.replace('text-oklch-primary-base', 'text-white');
+              check.textContent = '✓';
               const tl = gsap.timeline({ defaults: { duration: 0.3 } });
               tl.to(check, { scale: 2.2, duration: 0.25, ease: 'back.out(3)' })
                 .to(check, { rotation: 8, duration: 0.06, yoyo: true, repeat: 3, ease: 'power1.inOut' }, '<')
@@ -103,7 +106,16 @@ const WhyChooseUsSection: React.FC = () => {
                 .to(check, { scale: 1, rotation: 0, duration: 0.35, ease: 'back.in(2)' }, '-=0.2');
             }
           },
-          onLeaveBack: () => el.classList.replace('bg-oklch-primary-dark', "bg-oklch-gray-inactive"),
+          onLeaveBack: () => {
+            el.classList.replace('bg-oklch-primary-base', "bg-oklch-white-pure");
+            el.classList.remove('text-white');
+            const check = el.querySelector('.js-check') as HTMLElement | null;
+            if (check) {
+              check.classList.replace('text-white', 'text-oklch-primary-base');
+              const stepId = nodeRefs.current.indexOf(el);
+              check.textContent = String(stepId + 1);
+            }
+          },
           // Only enable on large screens
           // media: '(min-width: 1024px)'
         });
@@ -198,7 +210,7 @@ const WhyChooseUsSection: React.FC = () => {
                       <div className="bg-gradient-to-r from-oklch-primary-base to-green-500 h-1 rounded-full w-0 group-hover:w-full transition-all duration-1500 ease-out"></div>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="inline-block bg-oklch-secondary-light text-oklch-primary-dark text-xs px-2 py-1 rounded-full animate-pulse">
+                      <span className="inline-block bg-oklch-secondary-light text-oklch-primary-dark text-xs px-2 py-1 rounded-full">
                         Click to learn more
                       </span>
                     </div>
@@ -304,8 +316,8 @@ const WhyChooseUsSection: React.FC = () => {
                         </svg>
 
                         {/* Step node */}
-                        <div ref={el => (nodeRefs.current[index] = el)} className={`relative z-10 w-14 h-14 2xl:w-16 2xl:h-16 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-lg ${isLeft ? 'ml-[-80px] mlg:-ml-[100px] lxl:-ml-[124px] xl:-ml-36' : 'ml-[80px] mlg:ml-[100px] lxl:ml-[124px] xl:ml-36'} ${process.status === 'completed' ? 'bg-oklch-gray-inactive  backdrop-blur-xl ' : process.status === 'active' ? 'bg-oklch-primary-base animate-pulse' : 'bg-oklch-gray-inactive'}`}>
-                          <span className="js-check inline-block origin-center text-white">{process.status === 'completed' ? '✓' : process.step}</span>
+                        <div ref={el => (nodeRefs.current[index] = el)} className={`relative z-10 w-14 h-14 2xl:w-16 2xl:h-16 rounded-full flex items-center justify-center text-lg font-bold shadow-lg ${isLeft ? 'ml-[-80px] mlg:-ml-[100px] lxl:-ml-[124px] xl:-ml-36' : 'ml-[80px] mlg:ml-[100px] lxl:ml-[124px] xl:ml-36'} bg-oklch-white-pure`}>
+                          <span className={`js-check inline-block origin-center text-oklch-primary-base`}>{process.step}</span>
                           {/* Stars */}
                           <div className="pointer-events-none absolute inset-0 js-stars">
                             <Star className="js-star absolute -top-2 -right-2 text-yellow-400 opacity-0" size={14} />

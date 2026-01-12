@@ -68,7 +68,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const triggerStepAnimation = (nodeElement: HTMLDivElement, animate: boolean = true) => {
     // Change background color
-    nodeElement.classList.remove("bg-blue-200");
+    nodeElement.classList.remove("bg-white");
     nodeElement.classList.add("bg-blue-600");
     nodeElement.childNodes.forEach((child) => {
       if (child instanceof HTMLElement) {
@@ -131,7 +131,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
   const revertStepAnimation = (nodeElement: HTMLDivElement) => {
     // Revert background color back to original
     nodeElement.classList.remove("bg-blue-600");
-    nodeElement.classList.add("bg-blue-200");
+    nodeElement.classList.add("bg-white");
 
     // Revert text color back to blue
     nodeElement.childNodes.forEach((child) => {
@@ -209,7 +209,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="relative flex items-center sm:justify-center">
                 <div
                   ref={(el) => (nodeRefs.current[index] = el)}
-                  className="relative z-20 w-14 h-14 rounded-full bg-blue-200 backdrop-blur-xl flex items-center justify-center text-white text-lg font-bold shadow-lg border-2 border-blue-500 transition-colors duration-300"
+                  className="relative z-20 w-14 h-14 rounded-full bg-white backdrop-blur-xl flex items-center justify-center text-white text-lg font-bold shadow-lg border-2 border-blue-500 transition-colors duration-300"
                 >
                   <span className="js-check inline-block origin-center text-blue-600 font-bold">
                     {index + 1}
