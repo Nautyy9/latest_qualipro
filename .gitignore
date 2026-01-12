@@ -1,0 +1,51 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Build outputs
+/dist/
+**/dist/
+/build/
+**/build/
+/.next/
+**/.next/
+/.vite/
+**/.vite/
+
+# Env and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+**/coverage/
+
+# Misc
+*.local
+.tmp/
+**/.tmp/
+.svelte-kit/
+.vercel/
+.netlify/
+.firebase/
+
+# Lockfiles (optional; keep if you want to control versions)
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
