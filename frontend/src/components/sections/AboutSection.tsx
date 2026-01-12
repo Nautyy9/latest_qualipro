@@ -7,7 +7,7 @@ const AboutSection: React.FC = () => {
   return (
     <section className="section-padding cultured-bg">
       <div className="container-max flex flex-col mx-auto">
-        <span className="inline-block mb-4 mx-auto rounded-full border border-oklch-primary-base bg-white px-4 py-1 text-sm text-oklch-primary-dark shadow-lg shadow-blue-200/50">About Us •</span>
+        <span className="inline-block mb-4 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">About Us •</span>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
           {/* Left Content */}
           <motion.div className="space-y-8" variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
@@ -85,28 +85,28 @@ const AboutSection: React.FC = () => {
 
                 {/* Interactive Stats Grid */}
                 <motion.div className="grid grid-cols-2 gap-4" variants={staggerContainer}>
-                  <motion.div className="bg-white rounded-lg p-4 text-center shadow-sm border border-oklch-secondary-light hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-oklch-secondary-light hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
                     <div className="text-2xl font-bold text-oklch-primary-base group-hover/stat:animate-pulse">15+</div>
                     <div className="text-xs text-oklch-text-dark">States Covered</div>
                     <div className="w-full bg-oklch-secondary-light h-1 rounded-full mt-2">
                       <div className="bg-oklch-primary-base h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000"></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-white rounded-lg p-4 text-center shadow-sm border border-green-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-green-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
                     <div className="text-2xl font-bold text-green-600 group-hover/stat:animate-pulse">24/7</div>
                     <div className="text-xs text-oklch-text-dark">Support Available</div>
                     <div className="w-full bg-green-100 h-1 rounded-full mt-2">
                       <div className="bg-green-500 h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000" style={{ backgroundColor: 'oklch(0.52 0.15 142)' }}></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-white rounded-lg p-4 text-center shadow-sm border border-purple-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-purple-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
                     <div className="text-2xl font-bold text-purple-600 group-hover/stat:animate-pulse">100%</div>
                     <div className="text-xs text-oklch-text-dark">Compliance Rate</div>
                     <div className="w-full bg-purple-100 h-1 rounded-full mt-2">
                       <div className="bg-purple-500 h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000" style={{ backgroundColor: 'oklch(0.58 0.16 290)' }}></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-white rounded-lg p-4 text-center shadow-sm border border-indigo-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-indigo-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
                     <div className="text-2xl font-bold text-indigo-600 group-hover/stat:animate-pulse">50+</div>
                     <div className="text-xs text-oklch-text-dark">Expert Consultants</div>
                     <div className="w-full bg-indigo-100 h-1 rounded-full mt-2">

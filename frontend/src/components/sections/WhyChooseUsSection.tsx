@@ -159,11 +159,11 @@ const WhyChooseUsSection: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="inline-block  mb-2 mx-auto rounded-full border border-sky-500 bg-white  px-4 py-1 text-sm text-sky-700 shadow-lg shadow-blue-200/50">Why Choose Us •</span>
-          <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900" variants={textReveal}>
+          <span className="inline-block  mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure  px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Why Choose Us •</span>
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark" variants={textReveal}>
             Why Choose QualiPro as Your <span className="text-accent-600">Quality Partner</span>
           </motion.h2>
-          <motion.p className="text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed" variants={textReveal}>
+          <motion.p className="text-xl text-oklch-text-gray max-w-3xl mx-auto leading-relaxed" variants={textReveal}>
             We bring together expertise, experience, and innovation to deliver exceptional
             results for healthcare organizations seeking quality excellence.
           </motion.p>
@@ -184,21 +184,21 @@ const WhyChooseUsSection: React.FC = () => {
                 key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -4 }}
-                className="group border-transparent  h-full w-full mx-auto smd:w-3/4 md:w-full  cursor-pointer p-3  transition-all bg-gradient-to-br from-blue-50/50 to-blue-100/50  duration-500 hover:shadow-2xl"
+                className="group border-transparent  h-full w-full mx-auto smd:w-3/4 md:w-full  cursor-pointer p-3  transition-all bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50  duration-500 hover:shadow-2xl"
               >
-                <CardContent className="flex bg-white rounded-xl flex-col justify-between   w-full h-full text-center space-y-4 p-6">
-                  <motion.div className="row-span-1 w-20 h-20 bg-blue-50 rounded-full mx-auto flex items-center justify-center group-hover:bg-blue-500 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-inner  group-hover:shadow-2xl" variants={scaleIn}>
-                    <Icon className="text-blue-500 group-hover:text-white transition-all duration-300" size={32} />
+                <CardContent className="flex bg-oklch-white-pure rounded-xl flex-col justify-between   w-full h-full text-center space-y-4 p-6">
+                  <motion.div className="row-span-1 w-20 h-20 bg-oklch-bg-light-blue rounded-full mx-auto flex items-center justify-center group-hover:bg-oklch-primary-base group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-inner  group-hover:shadow-2xl" variants={scaleIn}>
+                    <Icon className="text-oklch-primary-base group-hover:text-oklch-white-pure transition-all duration-300" size={32} />
                   </motion.div>
                   <div className="space-y-2 row-span-1 flex flex-col justify-end ">
-                    <motion.h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors duration-300" style={{ color: '#202020' }} variants={textReveal}>{reason.title}</motion.h3>
-                    <motion.p className="text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300" style={{ color: '#202020' }} variants={textReveal}>{reason.description}</motion.p>
-                    <motion.div className="text-blue-600 font-semibold text-sm" variants={textReveal}>{reason.stats}</motion.div>
-                    <div className="w-full bg-blue-200/50 rounded-full h-1 mt-3 overflow-hidden">
-                      <div className="bg-gradient-to-r from-blue-500 to-green-500 h-1 rounded-full w-0 group-hover:w-full transition-all duration-1500 ease-out"></div>
+                    <motion.h3 className="text-xl font-bold group-hover:text-oklch-primary-dark transition-colors duration-300 text-oklch-text-dark" variants={textReveal}>{reason.title}</motion.h3>
+                    <motion.p className="text-sm leading-relaxed group-hover:text-oklch-text-gray transition-colors duration-300 text-oklch-text-dark" variants={textReveal}>{reason.description}</motion.p>
+                    <motion.div className="text-oklch-primary-dark font-semibold text-sm" variants={textReveal}>{reason.stats}</motion.div>
+                    <div className="w-full bg-oklch-secondary-lighter/50 rounded-full h-1 mt-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-oklch-primary-base to-green-500 h-1 rounded-full w-0 group-hover:w-full transition-all duration-1500 ease-out"></div>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full animate-pulse">
+                      <span className="inline-block bg-oklch-secondary-light text-oklch-primary-dark text-xs px-2 py-1 rounded-full animate-pulse">
                         Click to learn more
                       </span>
                     </div>
@@ -241,7 +241,7 @@ const WhyChooseUsSection: React.FC = () => {
           <div className="mt-20 relative" ref={timelineRef}>
 
             <div className="relative z-10   py-12 lg:px-6 xl:px-12">
-              <h3 className="text-2xl font-bold text-center mb-12" style={{ color: '#202020' }}>Our Proven 4-Step Process</h3>
+              <h3 className="text-2xl font-bold text-center mb-12 text-oklch-text-dark">Our Proven 4-Step Process</h3>
 
               {/* {curved svg line with alternative cards} */}
               <div className="hidden md:block relative ">
@@ -251,7 +251,7 @@ const WhyChooseUsSection: React.FC = () => {
                   <path
                     d="M 50 0 Q 38 12.5, 50 25 Q 62 37.5, 50 50 Q 38 62.5, 50 75 Q 62 87.5, 50 100"
                     fill="none"
-                    stroke="#0ea5e9"
+                    stroke="oklch(0.65 0.16 263)"
                     strokeWidth="0.3"
                     strokeLinecap="round"
                     strokeDasharray="1 3" strokeDashoffset="2"
@@ -262,11 +262,11 @@ const WhyChooseUsSection: React.FC = () => {
                     ref={progressLineRef}
                     d="M 50 0 Q 38 12.5, 50 25 Q 62 37.5, 50 50 Q 38 62.5, 50 75 Q 62 87.5, 50 100"
                     fill="none"
-                    stroke="#3b82f6"
+                    stroke="oklch(0.60 0.15 259)"
                     strokeWidth="0.5"
                     strokeLinecap="round"
                     className="js-progress-line"
-                    style={{ filter: 'drop-shadow(0 0 4px rgba(59, 130, 246, 0.5))' }}
+                    style={{ filter: 'drop-shadow(0 0 4px rgba(var(--color-primary-base), 0.5))' }}
                   />
                 </svg>
 
@@ -284,7 +284,7 @@ const WhyChooseUsSection: React.FC = () => {
                         {isLeft && (
                           <div className="relative">
                             <div className={`transform ${isLeft ? '-skew-y-2' : 'skew-y-1'}`}>
-                              <Card className="border border-gray-200 shadow-lg rounded-xl bg-white" >
+                              <Card className="border border-gray-200 shadow-lg rounded-xl bg-oklch-white-pure" >
                                 <CardContent className="p-6">
                                   <img src={stepImages[index]} alt={`step-${index + 1}`} className="w-full object-contain h-40 md:h-48 rounded-lg  mb-4" />
                                   <h4 className="font-semibold text-gray-900 mb-2">{process.title}</h4>
@@ -320,7 +320,7 @@ const WhyChooseUsSection: React.FC = () => {
                         {!isLeft && (
                           <div className="relative">
                             <div className={`transform ${!isLeft ? 'skew-y-2' : '-skew-y-1'}`}>
-                              <Card className="border  border-gray-200 shadow-lg rounded-xl bg-white" >
+                              <Card className="border  border-gray-200 shadow-lg rounded-xl bg-oklch-white-pure" >
                                 <CardContent className="p-6 text-left md:text-left">
                                   <img src={stepImages[index]} alt={`step-${index + 1}`} className="w-full h-40 md:h-48 rounded-lg object-contain mb-4" />
                                   <h4 className="font-semibold text-gray-900 mb-2">{process.title}</h4>

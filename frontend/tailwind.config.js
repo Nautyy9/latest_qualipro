@@ -45,6 +45,8 @@ export default {
         "oklch-accent-medium": "oklch(var(--color-accent-medium)/ <alpha-value>)",
         "oklch-white-pure": "oklch(var(--color-white-pure)/ <alpha-value>)",
         "oklch-purple-light": "oklch(var(--color-purple-light)/ <alpha-value>)",
+        "oklch-sky-base": "oklch(var(--color-sky-base)/ <alpha-value>)",
+        "oklch-sky-dark": "oklch(var(--color-sky-dark)/ <alpha-value>)",
       },
       backgroundColor : {
         'sgray' : '#f6f7f9',

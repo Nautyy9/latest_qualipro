@@ -83,7 +83,7 @@ const ServicesSection: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="inline-block mb-2 mx-auto rounded-full border border-oklch-primary-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-primary-darker shadow-lg shadow-oklch-secondary-lighter/50">
+          <span className="inline-block mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">
             Our Services •
           </span>
           <motion.h2
