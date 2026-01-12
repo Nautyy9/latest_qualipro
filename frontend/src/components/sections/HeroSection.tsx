@@ -142,7 +142,7 @@ const HeroSection: React.FC = () => {
                         <div className="text-xs text-oklch-text-gray">Success</div>
                       </div>
                     </div>
-                    <div className="text-xs backdrop-blur-3xl backdrop-filter font-medium rounded-full px-3 py-1 bg-white border border-oklch-border-primary text-oklch-text-dark-alt">
+                    <div className="text-xs backdrop-blur-3xl backdrop-filter font-medium rounded-full px-3 py-1 bg-oklch-white-pure border border-oklch-border-primary text-oklch-text-dark-alt">
                       🔥 Live metrics updating...
                     </div>
                   </div>

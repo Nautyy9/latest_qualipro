@@ -91,7 +91,7 @@ const WhyChooseUsSection: React.FC = () => {
           trigger: el,
           start: id === 0 ? 'top center+=70px' : id === 1 ? 'top center+=20px' : id === 2 ? 'top center-=40px' : "top center-=80px",
           onEnter: () => {
-            el.classList.replace("bg-gray-400", 'bg-blue-600');
+            el.classList.replace("bg-oklch-gray-inactive", 'bg-oklch-primary-dark');
             const check = el.querySelector('.js-check') as HTMLElement | null;
             const stars = el.querySelectorAll('.js-star');
             if (check) {
@@ -103,7 +103,7 @@ const WhyChooseUsSection: React.FC = () => {
                 .to(check, { scale: 1, rotation: 0, duration: 0.35, ease: 'back.in(2)' }, '-=0.2');
             }
           },
-          onLeaveBack: () => el.classList.replace('bg-blue-600', "bg-gray-400"),
+          onLeaveBack: () => el.classList.replace('bg-oklch-primary-dark', "bg-oklch-gray-inactive"),
           // Only enable on large screens
           // media: '(min-width: 1024px)'
         });
@@ -149,7 +149,7 @@ const WhyChooseUsSection: React.FC = () => {
   ]; */
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-oklch-white-pure">
       <div className="container-max">
         {/* Header */}
         <motion.div
@@ -219,17 +219,17 @@ const WhyChooseUsSection: React.FC = () => {
                     <Star key={i} size={20} className='text-yellow-200/50 fill-yellow-400 ' />
                   ))}
                 </div>
-                <blockquote className="text-lg italic text-neutral-700 leading-relaxed">
+                <blockquote className="text-lg italic text-oklch-text-gray leading-relaxed">
                   "QualiPro's expertise and systematic approach helped us achieve NABH accreditation
                   seamlessly. Their team's dedication and knowledge made the entire process smooth and efficient."
                 </blockquote>
                 <div className="space-y-1">
-                  <div className="font-semibold text-gray-900">Dr. Rajesh Kumar</div>
-                  <div className="text-sm text-neutral-600">Chief Medical Officer, Metro Hospital</div>
+                  <div className="font-semibold text-oklch-text-dark">Dr. Rajesh Kumar</div>
+                  <div className="text-sm text-oklch-text-gray">Chief Medical Officer, Metro Hospital</div>
                 </div>
               </div>
               <div className="text-center lg:text-right">
-                <div className="inline-flex items-center space-x-2 bg-blue-500 *:text-white px-6 py-3 rounded-full shadow-md">
+                <div className="inline-flex items-center space-x-2 bg-oklch-primary-base *:text-white px-6 py-3 rounded-full shadow-md">
                   <CheckCircle className="text-green-400" size={24} />
                   <span className="font-semibold ">Verified Client</span>
                 </div>
@@ -284,11 +284,11 @@ const WhyChooseUsSection: React.FC = () => {
                         {isLeft && (
                           <div className="relative">
                             <div className={`transform ${isLeft ? '-skew-y-2' : 'skew-y-1'}`}>
-                              <Card className="border border-gray-200 shadow-lg rounded-xl bg-oklch-white-pure" >
+                              <Card className="border border-oklch-border-light shadow-lg rounded-xl bg-oklch-white-pure" >
                                 <CardContent className="p-6">
                                   <img src={stepImages[index]} alt={`step-${index + 1}`} className="w-full object-contain h-40 md:h-48 rounded-lg  mb-4" />
-                                  <h4 className="font-semibold text-gray-900 mb-2">{process.title}</h4>
-                                  <p className="text-sm text-neutral-700">{process.description}</p>
+                                  <h4 className="font-semibold text-oklch-text-dark mb-2">{process.title}</h4>
+                                  <p className="text-sm text-oklch-text-gray">{process.description}</p>
                                 </CardContent>
                               </Card>
                             </div>
@@ -304,7 +304,7 @@ const WhyChooseUsSection: React.FC = () => {
                         </svg>
 
                         {/* Step node */}
-                        <div ref={el => (nodeRefs.current[index] = el)} className={`relative z-10 w-14 h-14 2xl:w-16 2xl:h-16 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-lg ${isLeft ? 'ml-[-80px] mlg:-ml-[100px] lxl:-ml-[124px] xl:-ml-36' : 'ml-[80px] mlg:ml-[100px] lxl:ml-[124px] xl:ml-36'} ${process.status === 'completed' ? 'bg-gray-400  backdrop-blur-xl ' : process.status === 'active' ? 'bg-blue-500 animate-pulse' : 'bg-gray-400'}`}>
+                        <div ref={el => (nodeRefs.current[index] = el)} className={`relative z-10 w-14 h-14 2xl:w-16 2xl:h-16 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-lg ${isLeft ? 'ml-[-80px] mlg:-ml-[100px] lxl:-ml-[124px] xl:-ml-36' : 'ml-[80px] mlg:ml-[100px] lxl:ml-[124px] xl:ml-36'} ${process.status === 'completed' ? 'bg-oklch-gray-inactive  backdrop-blur-xl ' : process.status === 'active' ? 'bg-oklch-primary-base animate-pulse' : 'bg-oklch-gray-inactive'}`}>
                           <span className="js-check inline-block origin-center text-white">{process.status === 'completed' ? '✓' : process.step}</span>
                           {/* Stars */}
                           <div className="pointer-events-none absolute inset-0 js-stars">
@@ -320,11 +320,11 @@ const WhyChooseUsSection: React.FC = () => {
                         {!isLeft && (
                           <div className="relative">
                             <div className={`transform ${!isLeft ? 'skew-y-2' : '-skew-y-1'}`}>
-                              <Card className="border  border-gray-200 shadow-lg rounded-xl bg-oklch-white-pure" >
+                              <Card className="border  border-oklch-border-light shadow-lg rounded-xl bg-oklch-white-pure" >
                                 <CardContent className="p-6 text-left md:text-left">
                                   <img src={stepImages[index]} alt={`step-${index + 1}`} className="w-full h-40 md:h-48 rounded-lg object-contain mb-4" />
-                                  <h4 className="font-semibold text-gray-900 mb-2">{process.title}</h4>
-                                  <p className="text-sm text-neutral-700">{process.description}</p>
+                                  <h4 className="font-semibold text-oklch-text-dark mb-2">{process.title}</h4>
+                                  <p className="text-sm text-oklch-text-gray">{process.description}</p>
                                 </CardContent>
                               </Card>
                             </div>

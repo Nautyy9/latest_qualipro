@@ -72,7 +72,7 @@ const AboutSection: React.FC = () => {
           {/* Right Content - Visual Elements */}
           <div className="relative">
             {/* Main Content Box */}
-            <motion.div className="bg-gradient-to-br from-blue-50/50 to-blue-100/50 rounded-2xl p-8 shadow-lg border border-blue-200/50 group-hover:shadow-2xl transition-all duration-500 hover:scale-105" variants={scaleIn}>
+            <motion.div className="bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 rounded-2xl p-8 shadow-lg border border-oklch-border-primary/50 group-hover:shadow-2xl transition-all duration-500 hover:scale-105" variants={scaleIn}>
               <div className="space-y-6">
                 {/* Header */}
                 <motion.div className="text-center space-y-2" variants={staggerContainer}>
@@ -117,26 +117,26 @@ const AboutSection: React.FC = () => {
 
                 {/* Process Flow */}
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 text-center">Our Certification Process</h4>
+                  <h4 className="font-semibold text-oklch-text-dark text-center">Our Certification Process</h4>
                   <div className="flex items-center justify-between">
                     <div className="text-center space-y-1">
                       <div className="w-8 h-8 bg-oklch-primary-base rounded-full mx-auto text-white text-xs flex items-center justify-center font-bold">1</div>
-                      <div className="text-xs text-neutral-600">Assessment</div>
+                      <div className="text-xs text-oklch-text-gray">Assessment</div>
                     </div>
                     <div className="flex-1 h-0.5 bg-oklch-secondary-light mx-2"></div>
                     <div className="text-center space-y-1">
                       <div className="w-8 h-8 bg-oklch-primary-base rounded-full mx-auto text-white text-xs flex items-center justify-center font-bold">2</div>
-                      <div className="text-xs text-neutral-600">Planning</div>
+                      <div className="text-xs text-oklch-text-gray">Planning</div>
                     </div>
                     <div className="flex-1 h-0.5 bg-oklch-secondary-light mx-2"></div>
                     <div className="text-center space-y-1">
                       <div className="w-8 h-8 bg-oklch-primary-base rounded-full mx-auto text-white text-xs flex items-center justify-center font-bold">3</div>
-                      <div className="text-xs text-neutral-600">Implementation</div>
+                      <div className="text-xs text-oklch-text-gray">Implementation</div>
                     </div>
                     <div className="flex-1 h-0.5 bg-oklch-secondary-light mx-2"></div>
                     <div className="text-center space-y-1">
                       <div className="w-8 h-8 rounded-full mx-auto text-white text-xs flex items-center justify-center font-bold" style={{ backgroundColor: 'oklch(0.63 0.26 29)' }}>✓</div>
-                      <div className="text-xs text-neutral-600">Certification</div>
+                      <div className="text-xs text-oklch-text-gray">Certification</div>
                     </div>
                   </div>
                 </div>

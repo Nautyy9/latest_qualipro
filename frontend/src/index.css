@@ -112,6 +112,9 @@ span, p , h1 , h2, h3, h4, h5, h6 {
     --color-sky-base: 0.65 0.16 263; /* sky-500 */
     --color-sky-dark: 0.55 0.16 263; /* sky-700 */
 
+    /* Gray Palette */
+    --color-gray-inactive: 0.58 0.01 0; /* gray-400 */
+
     /* Additional Colors */
     --color-white-pure: 1 0 0; /* white / off-white */
     --color-purple-light: 0.87 0.10 281; /* purple-200 */

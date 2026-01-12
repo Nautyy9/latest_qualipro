@@ -47,6 +47,7 @@ export default {
         "oklch-purple-light": "oklch(var(--color-purple-light)/ <alpha-value>)",
         "oklch-sky-base": "oklch(var(--color-sky-base)/ <alpha-value>)",
         "oklch-sky-dark": "oklch(var(--color-sky-dark)/ <alpha-value>)",
+        "oklch-gray-inactive": "oklch(var(--color-gray-inactive)/ <alpha-value>)",
       },
       backgroundColor : {
         'sgray' : '#f6f7f9',
