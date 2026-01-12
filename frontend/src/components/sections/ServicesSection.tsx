@@ -15,7 +15,7 @@ const ServicesSection: React.FC = () => {
       href: '/services',
       cta: 'Learn more',
       background: (
-        <div className="absolute inset-0  bg-white" />
+        <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
       className: 'lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-2',
     },
@@ -27,7 +27,7 @@ const ServicesSection: React.FC = () => {
       href: '/services',
       cta: 'Learn more',
       background: (
-        <div className="absolute inset-0  bg-white" />
+        <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
       className: 'lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2',
     },
@@ -40,7 +40,7 @@ const ServicesSection: React.FC = () => {
       href: '/services',
       cta: 'Learn more',
       background: (
-        <div className="absolute inset-0  bg-white" />
+        <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
       className: 'lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-4',
     },
@@ -52,7 +52,7 @@ const ServicesSection: React.FC = () => {
       href: '/services',
       cta: 'Learn more',
       background: (
-        <div className="absolute inset-0  bg-white" />
+        <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
       className: 'lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4',
     },
@@ -66,7 +66,7 @@ const ServicesSection: React.FC = () => {
       href: '/services',
       cta: 'Learn more',
       background: (
-        <div className="absolute inset-0  bg-white" />
+        <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
       className: 'lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-4',
     },
@@ -83,19 +83,17 @@ const ServicesSection: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="inline-block mb-2 mx-auto rounded-full border border-sky-500 bg-white px-4 py-1 text-sm text-sky-700 shadow-lg shadow-blue-200/50">
+          <span className="inline-block mb-2 mx-auto rounded-full border border-oklch-primary-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-primary-darker shadow-lg shadow-oklch-secondary-lighter/50">
             Our Services •
           </span>
           <motion.h2
-            className="text-3xl md:text-4xl font-bold"
-            style={{ color: '#202020' }}
+            className="text-3xl md:text-4xl font-bold text-oklch-text-dark"
             variants={textReveal}
           >
             Comprehensive Healthcare Solutions
           </motion.h2>
           <motion.p
-            className="text-xl max-w-3xl mx-auto leading-relaxed"
-            style={{ color: '#202020' }}
+            className="text-xl max-w-3xl mx-auto leading-relaxed text-oklch-text-dark"
             variants={textReveal}
           >
             We provide end-to-end solutions for healthcare organizations seeking quality improvement,
@@ -110,7 +108,7 @@ const ServicesSection: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <BentoGrid className="grid grid-rows-5 mx-auto lg:grid-rows-3 p-4  rounded-2xl gap-5 lg:gap-3 bg-gradient-to-br from-blue-50/50 to-blue-100/50 ">
+          <BentoGrid className="grid grid-rows-5 mx-auto lg:grid-rows-3 p-4  rounded-2xl gap-5 lg:gap-3 bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 ">
             {services.map((service) => (
               <BentoCard key={service.name} {...service} />
             ))}

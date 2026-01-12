@@ -29,7 +29,6 @@ export default {
         "oklch-border-primary": "oklch(var(--color-border-primary)/ <alpha-value>)",
         "oklch-border-light": "oklch(var(--color-border-light)/ <alpha-value>)",
         "oklch-text-dark": "oklch(var(--color-text-dark)/ <alpha-value>)",
-        "oklch-text-dark-alt": "oklch(var(--color-text-dark-alt)/ <alpha-value>)",
         "oklch-text-gray": "oklch(var(--color-text-gray)/ <alpha-value>)",
         "oklch-text-light-gray": "oklch(var(--color-text-light-gray)/ <alpha-value>)",
         "oklch-primary-bright": "oklch(var(--color-primary-bright)/ <alpha-value>)",
