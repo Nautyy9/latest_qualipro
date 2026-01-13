@@ -54,15 +54,15 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-oklch-white-pure">
       <div className="container-max">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <span className="inline-block  mb-2 mx-auto rounded-full border border-sky-500 bg-white  px-4 py-1 text-sm text-sky-700 shadow-lg shadow-blue-200/50">Testimonials •</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <span className="inline-block  mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure  px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Testimonials •</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark">
             What Our <span className="text-accent-600">Clients Say</span>
           </h2>
-          <p className="text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-oklch-text-gray max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what healthcare leaders across India
             say about their experience with QualiPro.
           </p>
@@ -72,12 +72,12 @@ const TestimonialsSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           {testimonials.map((testimonial) => (
             testimonial.isHeroCard ? (
-              <MotionCard 
-                key={testimonial.id} 
-                className="w-full h-full js-testimonial rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-500 col-span-1 md:row-span-2 md:col-span-1" 
-                initial={{ opacity: 0, y: 12 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true, amount: 0.2 }} 
+              <MotionCard
+                key={testimonial.id}
+                className="w-full h-full js-testimonial rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-500 col-span-1 md:row-span-2 md:col-span-1"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, ease: 'easeOut' }}
                 onMouseEnter={() => setIsHeroHovered(true)}
                 onMouseLeave={() => setIsHeroHovered(false)}
@@ -93,7 +93,7 @@ const TestimonialsSection: React.FC = () => {
                   <div className="absolute inset-0 bg-black/40"></div>
 
                   {/* Left side gradient overlay - darkens on hover with Framer Motion */}
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 bg-gradient-to-r"
                     animate={{
                       backgroundImage: isHeroHovered
@@ -107,7 +107,7 @@ const TestimonialsSection: React.FC = () => {
                   <div className="absolute inset-0 flex items-center justify-center p-6 md:p-8">
                     {/* Short Text - visible by default */}
                     {!isHeroHovered && (
-                      <motion.p 
+                      <motion.p
                         className="text-sm md:text-base text-white leading-relaxed font-medium text-center max-w-lg"
                         variants={textReveal}
                         initial="hidden"
@@ -116,10 +116,10 @@ const TestimonialsSection: React.FC = () => {
                         {testimonial.shortTestimonial}
                       </motion.p>
                     )}
-                    
+
                     {/* Long Text - visible on hover with text reveal animation */}
                     {isHeroHovered && (
-                      <motion.p 
+                      <motion.p
                         className="text-sm md:text-base text-white leading-relaxed font-medium text-center max-w-lg"
                         variants={textReveal}
                         initial="hidden"
@@ -139,11 +139,11 @@ const TestimonialsSection: React.FC = () => {
                 </div>
               </MotionCard>
             ) : (
-              <MotionCard key={testimonial.id} className="w-full border-blue-200/50  h-full js-testimonial bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-500" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
+              <MotionCard key={testimonial.id} className="w-full border-oklch-border-primary/50  h-full js-testimonial  rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-500" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
                 <CardContent className="p-8  h-full flex flex-col justify-between relative">
                   {/* Quote Icon */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-blue-200/50 rounded-full flex items-center justify-center group-hover:bg-primary-300/50 transition-colors duration-300">
-                    <Quote className="text-blue-600" size={24} />
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-oklch-secondary-lighter/50 rounded-full flex items-center justify-center group-hover:bg-oklch-secondary-light/50 transition-colors duration-300">
+                    <Quote className="text-oklch-primary-dark" size={24} />
                   </div>
 
                   {/* Rating */}
@@ -154,22 +154,22 @@ const TestimonialsSection: React.FC = () => {
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-neutral-700 leading-relaxed mb-6 italic">
+                  <blockquote className="text-oklch-text-gray leading-relaxed mb-6 italic">
                     "{testimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info */}
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">
+                    <div className="w-12 h-12 bg-oklch-primary-dark rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-oklch-white-pure font-bold text-sm">
                         {testimonial.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-neutral-600">{testimonial.position}</div>
+                      <div className="font-semibold text-oklch-text-dark">{testimonial.name}</div>
+                      <div className="text-sm text-oklch-text-gray">{testimonial.position}</div>
                       <div className="text-sm text-accent-600 font-medium">{testimonial.organization}</div>
-                      <div className="text-xs text-neutral-500 mt-1">{testimonial.location}</div>
+                      <div className="text-xs text-oklch-text-gray mt-1">{testimonial.location}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -179,10 +179,10 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="bg-sgray rounded-2xl p-8  text-[#202020] text-center">
+        <div className="bg-sgray rounded-2xl p-8  text-oklch-text-dark text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-blue-500">500+</div>
+              <div className="text-3xl font-bold text-oklch-primary-base">500+</div>
               <div className="">Happy Clients</div>
             </div>
             <div className="space-y-3">
@@ -195,7 +195,7 @@ const TestimonialsSection: React.FC = () => {
               <div className=" text-sm">Based on 500+ reviews</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-blue-500">99%</div>
+              <div className="text-3xl font-bold text-oklch-primary-base">99%</div>
               <div className="">Success Rate</div>
             </div>
           </div>

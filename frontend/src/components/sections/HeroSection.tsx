@@ -104,7 +104,7 @@ const HeroSection: React.FC = () => {
                         <span className="font-semibold text-oklch-primary-base">100%</span>
                       </div>
                       <div className="w-full rounded-full h-2 bg-oklch-text-light-gray">
-                        <div className="h-2 rounded-full animate-pulse border border-oklch-primary-bright" style={{ width: '100%', background: 'linear-gradient(to right, var(--color-white-pure), var(--color-primary-bright))' }}></div>
+                        <div className="h-2 rounded-full animate-pulse border border-oklch-primary-bright w-full bg-gradient-to-r from-oklch-white-pure to-oklch-primary-bright" ></div>
                       </div>
                     </div>
                     <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center shadow-lg bg-oklch-white-pure border border-oklch-primary-base">

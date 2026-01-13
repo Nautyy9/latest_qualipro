@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
         className={` shrinking-header fixed top-8 mx-auto left-0 right-0 transition-transform duration-300 ease-in-out z-50 flex items-center w-[calc(100vw_-_40px)] sm:w-[calc(100vw_-_80px)] min-[1100px]:w-[calc(100vw_-_144px)] rounded-full border border-oklch-white-pure ${scrolled ? 'w-[calc(100dvw_-_12px)] fixed top-2 lg:px-0 xl:px-20 2xl:px-40' : ''}`}
       >
         <div className={`flex md:px-5 lg:px-10 2xl:px-20 w-full ${scrolled ? 'px-0' : 'px-2'}`}>
-          <div className={`${isOpen ? "hidden" : "flex"} justify-between items-center w-full rounded-full py-3 sm:py-4 md:px-5 xl:px-10 transition-all`} style={{ backgroundColor: scrolled ? 'oklch(0.98 0.003 0 / 0.5)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none' }}>
+          <div className={`${isOpen ? "hidden" : "flex"} justify-between items-center w-full rounded-full  py-3 sm:py-4 px-3 sm:px-5 xl:px-10 transition-all`} style={{ backgroundColor: scrolled ? 'oklch(0.98 0.003 0 / 0.5)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none' }}>
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-1 sm:space-x-3">
               <div className={`${scrolled ? 'w-10 h-10' : 'w-10 h-10'} rounded-lg flex items-center justify-center transition-all duration-600`}>
@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
             <Button
               variant="ghost"
               size="icon"
-              className={`md:hidden h-11 w-11 rounded-lg transition-all duration-300 text-oklch-text-dark-alt`}
+              className={`md:hidden h-11 w-11  transition-all duration-300 text-oklch-text-dark hover:bg-oklch-primary-base hover:text-oklch-white-pure rounded-full`}
               aria-label="Open menu"
               onClick={() => setIsOpen(true)}
             >
@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
             <div className="md:hidden">
               <SheetContent className="p-0 border-0 fixed inset-y-0 right-0 z-[60] w-[92vw] max-w-sm bg-transparent shadow-none">
                 <div
-                  className="h-full w-full shadow-2xl flex flex-col bg-oklch-white-pure text-oklch-text-dark-alt"
+                  className="h-full w-full shadow-2xl flex flex-col bg-oklch-white-pure text-oklch-text-dark"
                   onClick={(e) => e.stopPropagation()}
                   onTouchStart={(e) => {
                     const t = e.touches[0];
@@ -239,7 +239,7 @@ const Navbar: React.FC = () => {
                       <img src={logo} alt="qualipro" className="h-8 w-8 object-contain" />
                       <span className="text-xl font-serif font-semibold text-oklch-text-dark-alt">QualiPro</span>
                     </div>
-                    <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="rounded-full p-2 anim-right-in transition-colors text-oklch-primary-base hover:bg-oklch-secondary-lighter" style={{ animationDelay: '180ms' }}>
+                    <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="rounded-full p-2 anim-right-in transition-colors text-oklch-primary-base hover:bg-oklch-primary-base hover:text-oklch-white-pure" style={{ animationDelay: '180ms' }}>
                       <X size={20} />
                     </button>
                   </div>
@@ -249,25 +249,25 @@ const Navbar: React.FC = () => {
                     {/* Nav links */}
                     <nav className="flex flex-col gap-2 px-3 py-4">
                       <div className="animate-drop-in" style={{ animationDelay: '240ms' }}>
-                        <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/') ? 'var(--color-border-primary)' : 'transparent' }}>
+                        <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Home className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Home</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '310ms' }}>
-                        <Link to="/services" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/services') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/services') ? 'var(--color-border-primary)' : 'transparent' }}>
+                        <Link to="/services" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/services") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`}>
                           <Recycle className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Services</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '380ms' }}>
-                        <Link to="/about" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/about') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/about') ? 'var(--color-border-primary)' : 'transparent' }}>
+                        <Link to="/about" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/about") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Briefcase className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">About</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '450ms' }}>
-                        <Link to="/contact" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border`} style={{ backgroundColor: isActive('/contact') ? 'oklch(0.99 0.003 0 / 0.9)' : 'transparent', borderColor: isActive('/contact') ? 'var(--color-border-primary)' : 'transparent' }}>
+                        <Link to="/contact" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/contact") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Phone className="h-5 w-5 text-oklch-primary-bright" />
                           <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Contact</span>
                         </Link>
