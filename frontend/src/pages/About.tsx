@@ -16,7 +16,7 @@ const About: React.FC = () => {
         'Change enablement and on-ground training',
         'Outcome-driven dashboards and reviews',
       ],
-      image: '/images/Our Mission.webp',
+      image: '/images/Our Mission.png',
     },
     {
       title: 'Our Vision',
@@ -27,7 +27,7 @@ const About: React.FC = () => {
         'Audit simulations and corrective actions',
         'Leadership alignment and cadence',
       ],
-      image: '/images/vision.webp',
+      image: '/images/vision.png',
     },
     {
       title: 'Our Expertise',
@@ -38,7 +38,7 @@ const About: React.FC = () => {
         'Deep domain + product thinking',
         'Sustained post-cert support',
       ],
-      image: '/images/expertise.webp',
+      image: '/images/expertise.png',
     },
   ];
 
@@ -50,19 +50,19 @@ const About: React.FC = () => {
     <motion.div className="min-h-screen" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
       {/* Hero */}
       <section className="relative pt-28 md:pt-36 pb-10 overflow-visible">
-        <div className="absolute inset-x-0 -top-24 bottom-0 bg-gradient-to-b from-sky-50 via-sky-50/60 to-transparent -z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 -top-24 bottom-0 bg-gradient-to-b from-oklch-bg-light-blue via-oklch-bg-light-blue/60 to-transparent -z-10 pointer-events-none" />
         <div className="container-max px-4 sm:px-6 lg:px-8 text-center relative">
           {/* Decorative soft blobs */}
-          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-blue-100/60 blur-2xl" />
+          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <motion.div variants={sectionVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, ease: 'easeOut' }}>
-            <span className="inline-block mb-4 rounded-full border border-sky-200 bg-white/70 px-4 py-1 text-sm text-sky-700 shadow-sky-200/50 shadow-md">Our Story</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-blue-600">About QualiPro</h1>
-            <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">
+            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base bg-oklch-sky-base/20 px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Our Story</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-oklch-primary-dark">About QualiPro</h1>
+            <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
               Healthcare quality, simplified. We partner end-to-end to help you meet standards with confidence.
             </p>
             <div className="mt-8 flex justify-center">
-              <div className="h-px w-24 bg-gradient-to-r from-transparent via-sky-300 to-transparent" />
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-oklch-sky-base to-transparent" />
             </div>
           </motion.div>
         </div>
@@ -91,8 +91,8 @@ const About: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   className="inline-flex items-center gap-2"
                 >
-                  <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">Section</span>
-                  <span className="text-3xl font-black text-blue-600">{index + 1}</span>
+                  <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Section</span>
+                  <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
                 </motion.div>
 
                 {/* Title */}
@@ -102,12 +102,12 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.05 }}
                 >
-                  <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 leading-tight">{section.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-oklch-primary-dark leading-tight">{section.title}</h2>
                 </motion.div>
 
                 {/* Description */}
                 <motion.p
-                  className="text-sm sm:text-base text-neutral-700 leading-relaxed"
+                  className="text-sm sm:text-base text-oklch-text-gray leading-relaxed"
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -125,10 +125,10 @@ const About: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.15 }}
                 >
                   {/* Decorative background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-transparent rounded-3xl blur-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-oklch-secondary-light/30 to-transparent rounded-3xl blur-2xl"></div>
 
                   {/* Main card */}
-                  <Card className="relative overflow-hidden bg-white shadow-lg h-72 sm:h-80 flex items-center justify-center border-0">
+                  <Card className="relative overflow-hidden bg-oklch-white-pure shadow-lg h-72 sm:h-80 flex items-center justify-center border-0">
                     <img src={section.image} alt={section.title} className='h-full w-full object-contain p-6' />
                   </Card>
                 </motion.div>
@@ -150,8 +150,8 @@ const About: React.FC = () => {
                       transition={{ duration: 0.4, delay: 0.25 + idx * 0.05 }}
                     >
                       <div className="flex gap-2 items-start p-3 sm:p-4">
-                        <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                        <p className="text-xs sm:text-sm text-neutral-700 leading-tight">{highlight}</p>
+                        <span className="text-oklch-primary-dark font-bold flex-shrink-0">✓</span>
+                        <p className="text-xs sm:text-sm text-oklch-text-gray leading-tight">{highlight}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -173,7 +173,7 @@ const About: React.FC = () => {
                 {/* Divider */}
                 {index < sections.length - 1 && (
                   <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent mt-8"
+                    className="h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent mt-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -194,14 +194,14 @@ const About: React.FC = () => {
                     className="space-y-2"
                   >
                     <div className="inline-flex items-center gap-2">
-                      <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">Section</span>
-                      <span className="text-3xl font-black text-blue-600">{index + 1}</span>
+                      <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Section</span>
+                      <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 leading-tight">{section.title}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-oklch-primary-dark leading-tight">{section.title}</h2>
                   </motion.div>
 
                   <motion.p
-                    className="text-base text-neutral-700 leading-relaxed"
+                    className="text-base text-oklch-text-gray leading-relaxed"
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -222,10 +222,10 @@ const About: React.FC = () => {
                     >
                       <div className="relative">
                         {/* Decorative background */}
-                        <div className="absolute -inset-6 bg-gradient-to-br from-blue-100/40 to-transparent rounded-3xl blur-2xl"></div>
+                        <div className="absolute -inset-6 bg-gradient-to-br from-oklch-secondary-light/40 to-transparent rounded-3xl blur-2xl"></div>
 
                         {/* Main card */}
-                        <Card className="relative overflow-hidden bg-white shadow-2xl hover:shadow-3xl transition-all duration-500 border-0 aspect-square flex items-center justify-center">
+                        <Card className="relative overflow-hidden bg-oklch-white-pure shadow-2xl hover:shadow-3xl transition-all duration-500 border-0 aspect-square flex items-center justify-center">
                           <img src={section.image} alt={section.title} className='h-full w-full object-contain p-8' />
                         </Card>
                       </div>
@@ -248,8 +248,8 @@ const About: React.FC = () => {
                           transition={{ duration: 0.4, delay: 0.25 + idx * 0.05 }}
                         >
                           <div className="flex gap-3 items-start p-4">
-                            <span className="text-blue-600 font-bold flex-shrink-0 text-lg">✓</span>
-                            <p className="text-sm text-neutral-700 leading-tight">{highlight}</p>
+                            <span className="text-oklch-primary-dark font-bold flex-shrink-0 text-lg">✓</span>
+                            <p className="text-sm text-oklch-text-gray leading-tight">{highlight}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -271,7 +271,7 @@ const About: React.FC = () => {
                   {/* Divider */}
                   {index < sections.length - 1 && (
                     <motion.div
-                      className="h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent"
+                      className="h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -291,9 +291,9 @@ const About: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                   >
-                    <span className="inline-block mb-3 text-xs font-semibold text-blue-600 uppercase tracking-wider">Section {index + 1}</span>
-                    <h2 className="text-3xl xl:text-4xl font-bold mb-4 text-blue-600 leading-tight">{section.title}</h2>
-                    <p className="text-base text-neutral-700 mb-8 leading-relaxed">
+                    <span className="inline-block mb-3 text-xs font-semibold text-oklch-primary-dark uppercase tracking-wider">Section {index + 1}</span>
+                    <h2 className="text-3xl xl:text-4xl font-bold mb-4 text-oklch-primary-dark leading-tight">{section.title}</h2>
+                    <p className="text-base text-oklch-text-gray mb-8 leading-relaxed">
                       {section.description}
                     </p>
 
@@ -308,8 +308,8 @@ const About: React.FC = () => {
                           viewport={{ once: true }}
                           transition={{ duration: 0.5, delay: 0.1 + idx * 0.05 }}
                         >
-                          <span className="text-blue-500 font-bold flex-shrink-0">✓</span>
-                          <span className="text-sm text-neutral-700">{highlight}</span>
+                          <span className="text-oklch-primary-medium font-bold flex-shrink-0">✓</span>
+                          <span className="text-sm text-oklch-text-gray">{highlight}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -333,10 +333,10 @@ const About: React.FC = () => {
                 >
                   <div className="relative h-80 lg:h-96 pb-16">
                     {/* Decorative background */}
-                    <div className={`absolute -inset-8 bg-gradient-to-br ${index % 2 === 1 ? 'from-blue-100/40 to-transparent' : 'from-transparent to-blue-100/40'} rounded-3xl blur-2xl`}></div>
+                    <div className={`absolute -inset-8 bg-gradient-to-br ${index % 2 === 1 ? 'from-oklch-secondary-light/40 to-transparent' : 'from-transparent to-oklch-secondary-light/40'} rounded-3xl blur-2xl`}></div>
 
                     {/* Main card */}
-                    <Card className="relative overflow-hidden h-full flex items-center justify-center bg-white shadow-lg hover:shadow-3xl transition-all duration-500 border-0">
+                    <Card className="relative overflow-hidden h-full flex items-center justify-center bg-oklch-white-pure shadow-lg hover:shadow-3xl transition-all duration-500 border-0">
                       <img src={section.image} alt={section.title} className='h-full w-full object-contain p-4 ' />
                     </Card>
                   </div>
@@ -351,11 +351,11 @@ const About: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.35 + idx * 0.1 }}
                       >
-                        <Card className="bg-white backdrop-blur-sm shadow-lg hover:shadow-xl border-0 p-3 text-center hover:-translate-y-1 transition-transform duration-300 h-full">
-                          <div className="text-blue-600 font-bold text-xs mb-1 line-clamp-1">
+                        <Card className="bg-oklch-white-pure backdrop-blur-sm shadow-lg hover:shadow-xl border-0 p-3 text-center hover:-translate-y-1 transition-transform duration-300 h-full">
+                          <div className="text-oklch-primary-dark font-bold text-xs mb-1 line-clamp-1">
                             {highlight.split(' ').slice(0, 2).join(' ')}
                           </div>
-                          <div className="text-xs text-neutral-600 leading-tight line-clamp-2">
+                          <div className="text-xs text-oklch-text-gray leading-tight line-clamp-2">
                             {highlight}
                           </div>
                         </Card>
@@ -367,7 +367,7 @@ const About: React.FC = () => {
 
               {/* Divider */}
               {index < sections.length - 1 && (
-                <div className="hidden lg:block mt-20 h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent"></div>
+                <div className="hidden lg:block mt-20 h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent"></div>
               )}
             </motion.div>
           ))}

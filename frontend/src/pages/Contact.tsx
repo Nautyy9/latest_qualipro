@@ -99,33 +99,33 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <motion.div className="min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
+    <motion.div className="min-h-screen bg-gradient-to-b from-oklch-white-pure via-oklch-secondary-lighter/30 to-oklch-white-pure" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-0 -left-32 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 -right-32 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-0 -left-32 w-96 h-96 bg-oklch-secondary-lighter/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 -right-32 w-96 h-96 bg-oklch-sky-base/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-36 pb-10 overflow-visible">
-        <div className="absolute inset-x-0 -top-24 bottom-0 bg-gradient-to-b from-sky-50 via-sky-50/60 to-transparent -z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 -top-24 bottom-0 bg-gradient-to-b from-oklch-bg-light-blue via-oklch-bg-light-blue/60 to-transparent -z-10 pointer-events-none" />
         <div className="container-max px-4 sm:px-6 lg:px-8 text-center relative">
           {/* Decorative soft blobs */}
-          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-blue-100/60 blur-2xl" />
+          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <motion.div
             variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
-            <span className="inline-block mb-4 rounded-full border border-sky-200 bg-white/70 px-4 py-1 text-sm text-sky-700 shadow-sky-200/50 shadow-md">Get in Touch</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-blue-600">Contact Us</h1>
-            <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">
+            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base bg-oklch-sky-base/20 px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Get in Touch</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-oklch-primary-dark">Contact Us</h1>
+            <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
               We're here to help. Reach out to us for any questions or inquiries about our services.
             </p>
             <div className="mt-8 flex justify-center">
-              <div className="h-px w-24 bg-gradient-to-r from-transparent via-sky-300 to-transparent" />
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-oklch-sky-base to-transparent" />
             </div>
           </motion.div>
         </div>
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="sticky top-32 space-y-6">
-                <h2 className="text-3xl font-bold text-blue-600 mb-8">Reach Out</h2>
+                <h2 className="text-3xl font-bold text-oklch-primary-dark mb-8">Reach Out</h2>
 
                 {contactMethods.map((method) => {
                   const Icon = method.icon;
@@ -157,26 +157,26 @@ const Contact: React.FC = () => {
                       transition={{ delay: method.delay }}
                       className="group"
                     >
-                      <div className="relative overflow-hidden rounded-2xl bg-white border border-blue-100/50 p-6 hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                      <div className="relative overflow-hidden rounded-2xl bg-oklch-white-pure border border-oklch-secondary-light/50 p-6 hover:border-oklch-secondary-light transition-all duration-300 cursor-pointer">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-sky-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-oklch-primary-base/5 to-oklch-sky-base/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                         <div className="relative z-10">
                           <div className="flex items-center gap-4 mb-4">
                             <motion.div
-                              className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0"
+                              className="w-12 h-12 rounded-xl bg-gradient-to-br from-oklch-primary-base to-oklch-primary-dark flex items-center justify-center flex-shrink-0"
                               whileHover={{ scale: 1.1, rotate: 5 }}
                             >
-                              <Icon className="w-6 h-6 text-white" />
+                              <Icon className="w-6 h-6 text-oklch-white-pure" />
                             </motion.div>
-                            <h3 className="font-semibold text-neutral-900 text-lg">{method.label}</h3>
+                            <h3 className="font-semibold text-oklch-text-dark text-lg">{method.label}</h3>
                           </div>
-                          <p className="text-neutral-600 group-hover:text-blue-600 transition-colors duration-300">{method.value}</p>
+                          <p className="text-oklch-text-gray group-hover:text-oklch-primary-dark transition-colors duration-300">{method.value}</p>
                         </div>
 
                         {/* Hover indicator */}
                         <motion.div
-                          className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-sky-500 w-0 group-hover:w-full transition-all duration-300"
+                          className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base w-0 group-hover:w-full transition-all duration-300"
                         />
                       </div>
                     </motion.div>
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
 
                 {/* Fun fact/stat card */}
                 <motion.div
-                  className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-600 *:text-white"
+                  className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-oklch-primary-base to-oklch-sky-base *:text-oklch-white-pure"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -208,7 +208,7 @@ const Contact: React.FC = () => {
             >
               <div
                 onMouseMove={handleMouseMove}
-                className="relative rounded-3xl overflow-hidden bg-white border border-blue-200/50 p-8 md:p-12 shadow-xl"
+                className="relative rounded-3xl overflow-hidden bg-oklch-white-pure border border-oklch-secondary-light/50 p-8 md:p-12 shadow-xl"
               >
                 {/* Gradient light effect following cursor (desktop only) */}
                 <motion.div
@@ -217,7 +217,7 @@ const Contact: React.FC = () => {
                   animate={{ opacity: 1 }}
                 >
                   <div
-                    className="absolute w-96 h-96 bg-gradient-to-r from-blue-500/10 to-sky-500/10 rounded-full blur-3xl pointer-events-none"
+                    className="absolute w-96 h-96 bg-gradient-to-r from-oklch-primary-base/10 to-oklch-sky-base/10 rounded-full blur-3xl pointer-events-none"
                     style={{
                       left: `${mousePosition.x}px`,
                       top: `${mousePosition.y}px`,
@@ -230,7 +230,7 @@ const Contact: React.FC = () => {
                   {/* Form Header */}
                   <div className="mb-10">
                     <motion.h2
-                      className="text-4xl font-black text-blue-600 mb-3"
+                      className="text-4xl font-black text-oklch-primary-dark mb-3"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -238,8 +238,8 @@ const Contact: React.FC = () => {
                       Send us a Message
                     </motion.h2>
                     <div className="flex items-center gap-3">
-                      <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-sky-500 rounded-full" />
-                      <p className="text-neutral-600">We'll respond promptly to your inquiry</p>
+                      <div className="h-1 w-12 bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base rounded-full" />
+                      <p className="text-oklch-text-gray">We'll respond promptly to your inquiry</p>
                     </div>
                   </div>
 
@@ -275,15 +275,15 @@ const Contact: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                       >
-                        <label className="block text-sm font-bold text-neutral-700 mb-3">Full Name *</label>
+                        <label className="block text-sm font-bold text-oklch-text-dark mb-3">Full Name *</label>
                         <Input
                           placeholder="John Doe"
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           onBlur={(e) => handleBlur('name', e.target.value)}
                           className={cn(
-                            'h-13 rounded-xl border-2 bg-neutral-50/50 placeholder:text-neutral-400 transition-all',
-                            errors.name ? 'border-red-400 bg-red-50' : 'border-blue-200 focus:border-blue-500 focus:bg-white'
+                            'h-13 rounded-xl border-2 bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                            errors.name ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
                         />
@@ -297,7 +297,7 @@ const Contact: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.15 }}
                       >
-                        <label className="block text-sm font-bold text-neutral-700 mb-3">Phone Number *</label>
+                        <label className="block text-sm font-bold text-oklch-text-dark mb-3">Phone Number *</label>
                         <Input
                           type="tel"
                           placeholder="+91 XXXXX XXXXX"
@@ -305,8 +305,8 @@ const Contact: React.FC = () => {
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
                           onBlur={(e) => handleBlur('phone', e.target.value)}
                           className={cn(
-                            'h-13 rounded-xl border-2 bg-neutral-50/50 placeholder:text-neutral-400 transition-all',
-                            errors.phone ? 'border-red-400 bg-red-50' : 'border-blue-200 focus:border-blue-500 focus:bg-white'
+                            'h-13 rounded-xl border-2 bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                            errors.phone ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
                         />
@@ -321,7 +321,7 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
                     >
-                      <label className="block text-sm font-bold text-neutral-700 mb-3">Email Address *</label>
+                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Email Address *</label>
                       <Input
                         type="email"
                         placeholder="you@company.com"
@@ -329,8 +329,8 @@ const Contact: React.FC = () => {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onBlur={(e) => handleBlur('email', e.target.value)}
                         className={cn(
-                          'h-13 rounded-xl border-2 w-full bg-neutral-50/50 placeholder:text-neutral-400 transition-all',
-                          errors.email ? 'border-red-400 bg-red-50' : 'border-blue-200 focus:border-blue-500 focus:bg-white'
+                          'h-13 rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                          errors.email ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
@@ -344,15 +344,15 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.25 }}
                     >
-                      <label className="block text-sm font-bold text-neutral-700 mb-3">Subject *</label>
+                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Subject *</label>
                       <Input
                         placeholder="What is this about?"
                         value={form.subject}
                         onChange={(e) => setForm({ ...form, subject: e.target.value })}
                         onBlur={(e) => handleBlur('subject', e.target.value)}
                         className={cn(
-                          'h-13 rounded-xl border-2 w-full bg-neutral-50/50 placeholder:text-neutral-400 transition-all',
-                          errors.subject ? 'border-red-400 bg-red-50' : 'border-blue-200 focus:border-blue-500 focus:bg-white'
+                          'h-13 rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                          errors.subject ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
@@ -366,7 +366,7 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 }}
                     >
-                      <label className="block text-sm font-bold text-neutral-700 mb-3">Your Message *</label>
+                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Your Message *</label>
                       <Textarea
                         rows={6}
                         placeholder="Tell us about your inquiry, needs, or any questions you have..."
@@ -374,8 +374,8 @@ const Contact: React.FC = () => {
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         onBlur={(e) => handleBlur('message', e.target.value)}
                         className={cn(
-                          'rounded-xl border-2 w-full bg-neutral-50/50 placeholder:text-neutral-400 resize-none transition-all',
-                          errors.message ? 'border-red-400 bg-red-50' : 'border-blue-200 focus:border-blue-500 focus:bg-white'
+                          'rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray resize-none transition-all',
+                          errors.message ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
@@ -423,11 +423,11 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Prefer a Different Channel?</h2>
-            <p className="text-neutral-600 mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark mb-4">Prefer a Different Channel?</h2>
+            <p className="text-oklch-text-gray mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-blue-300 hover:border-blue-400 hover:bg-blue-50">Schedule a Call</Button>
-              <Button className="rounded-xl h-12 px-8 border-2 border-blue-600 bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50">Schedule a Call</Button>
+              <Button className="rounded-xl h-12 px-8 border-2 border-oklch-primary-dark bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>
             </div>
           </motion.div>
         </div>

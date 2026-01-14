@@ -413,7 +413,7 @@ const Services: React.FC = () => {
                       {service.pills?.map((pill, pillIndex) => (
                         <motion.div
                           key={pillIndex}
-                          className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold border-2 border-white shadow-[0_8px_24px_rgba(59,130,246,0.3)]`}
+                          className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-oklch-primary-base to-oklch-primary-dark text-oklch-white-pure px-4 py-2 rounded-full text-sm font-semibold border-2 border-oklch-white-pure shadow-[0_8px_24px_rgba(var(--oklch-primary-base-rgb),0.3)]`}
                           variants={pill.animation}
                           animate="animate"
                         >
@@ -449,7 +449,7 @@ const Services: React.FC = () => {
 
               {/* Divider */}
               {index < services.length - 1 && (
-                <div className="hidden lg:block mt-20 h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent"></div>
+                <div className="hidden lg:block mt-20 h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent"></div>
               )}
             </motion.div>
           ))}
