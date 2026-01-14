@@ -16,7 +16,7 @@ const About: React.FC = () => {
         'Change enablement and on-ground training',
         'Outcome-driven dashboards and reviews',
       ],
-      image: '/images/Our Mission.png',
+      image: '/images/Our Mission.webp',
     },
     {
       title: 'Our Vision',
@@ -27,7 +27,7 @@ const About: React.FC = () => {
         'Audit simulations and corrective actions',
         'Leadership alignment and cadence',
       ],
-      image: '/images/vision.png',
+      image: '/images/vision.webp',
     },
     {
       title: 'Our Expertise',
@@ -38,7 +38,7 @@ const About: React.FC = () => {
         'Deep domain + product thinking',
         'Sustained post-cert support',
       ],
-      image: '/images/expertise.png',
+      image: '/images/expertise.webp',
     },
   ];
 
