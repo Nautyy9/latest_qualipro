@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import logo from "../../../../design_assets/qualipro/logo.png"
+import logo from "../../../../design_assets/qualipro/logo.webp"
 
 const linksClass = "text-gray-500 border-b-2 border-transparent hover:text-blue-500  hover:border-blue-500 transition-colors duratrion-300";
 

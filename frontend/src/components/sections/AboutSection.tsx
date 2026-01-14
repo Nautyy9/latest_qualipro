@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { staggerContainer, textReveal, fadeInUp, scaleIn } from '../../utils/motion';
 import { Target, Eye, Heart, CheckCircle } from 'lucide-react';
+import AnimatedIcon from '../ui/animated-icon';
 
 const AboutSection: React.FC = () => {
   return (
@@ -26,9 +27,13 @@ const AboutSection: React.FC = () => {
               {/* Mission */}
               <motion.div className="space-y-3" variants={fadeInUp}>
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-oklch-secondary-light/50 rounded-lg flex items-center justify-center">
-                    <Target className="text-oklch-primary-base" size={24} />
-                  </div>
+                  <AnimatedIcon
+                    icon={<Target className="text-oklch-primary-base" size={24} />}
+                    triggerOnScroll={true}
+                    size="md"
+                    centered={false}
+                    className="bg-oklch-secondary-light/50 rounded-lg"
+                  />
                   <h3 className="text-xl font-semibold text-raisin-900">Our Mission</h3>
                 </div>
                 <p className="text-raisin-600 text-base">
@@ -39,9 +44,13 @@ const AboutSection: React.FC = () => {
               {/* Vision */}
               <motion.div className="space-y-3" variants={fadeInUp}>
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-oklch-secondary-light/50 rounded-lg flex items-center justify-center">
-                    <Eye className="text-oklch-primary-base" size={24} />
-                  </div>
+                  <AnimatedIcon
+                    icon={<Eye className="text-oklch-primary-base" size={24} />}
+                    triggerOnScroll={true}
+                    size="md"
+                    centered={false}
+                    className="bg-oklch-secondary-light/50 rounded-lg"
+                  />
                   <h3 className="text-xl font-semibold text-raisin-900">Our Vision</h3>
                 </div>
                 <p className="text-raisin-600 text-base">
@@ -76,9 +85,12 @@ const AboutSection: React.FC = () => {
               <div className="space-y-6">
                 {/* Header */}
                 <motion.div className="text-center space-y-2" variants={staggerContainer}>
-                  <motion.div className="w-16 h-16 bg-oklch-primary-base rounded-full mx-auto flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" variants={scaleIn}>
-                    <Heart className="text-white group-hover:animate-pulse" size={32} />
-                  </motion.div>
+                  <AnimatedIcon
+                    icon={<Heart className="text-white" size={32} />}
+                    triggerOnScroll={true}
+                    size="lg"
+                    className="bg-oklch-primary-base rounded-full shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500"
+                  />
                   <motion.h3 className="text-xl font-bold text-oklch-text-dark" variants={textReveal}>Patient-Centered Approach</motion.h3>
                   <motion.p className="text-sm text-oklch-text-dark" variants={textReveal}>Quality healthcare for better patient outcomes</motion.p>
                 </motion.div>

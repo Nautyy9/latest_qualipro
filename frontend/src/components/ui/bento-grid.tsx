@@ -3,6 +3,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
+import AnimatedIcon from "./animated-icon";
 
 const BentoGrid = ({
   children,
@@ -32,7 +33,9 @@ const BentoCard = ({
   href,
   cta,
   img,
-  img2
+  img2,
+  stats,
+  features
 }: {
   name: string;
   className: string;
@@ -43,6 +46,8 @@ const BentoCard = ({
   cta: string;
   img?: string;
   img2?: string;
+  stats?: Array<{ value: string; label: string }>;
+  features?: Array<{ icon: any; title: string; description: string }>;
 }) => (
   <div
     key={name}
@@ -67,14 +72,50 @@ const BentoCard = ({
     )
     }
 
-    <div className="pointer-events-none mb-2 z-10 flex transform-gpu flex-col gap-3    transition-all duration-300 group-hover:-translate-y-8">
-      <div className="w-12 h-12 bg-blue-200/50 rounded-lg flex items-center justify-center flex-shrink-0">
-        <Icon className="h-6 w-6 text-blue-600 transition-all duration-300 ease-in-out" strokeWidth={2} />
-      </div>
+    {/* Top Image for tall cards */}
+
+
+    <div className="pointer-events-none mb-2 z-10 flex transform-gpu flex-col gap-3 transition-all duration-300 group-hover:-translate-y-8">
+      <AnimatedIcon
+        icon={<Icon className="h-6 w-6 text-blue-600 transition-all duration-300 ease-in-out" strokeWidth={2} />}
+        triggerOnScroll={true}
+        size="md"
+        centered={false}
+        className="bg-blue-200/50 rounded-lg flex-shrink-0"
+      />
       <h3 className="text-xl font-semibold" style={{ color: '#202020' }}>
         {name}
       </h3>
-      <p className="max-w-lg leading-relaxed" style={{ color: '#202020' }}>{description}</p>
+      <p className="max-w-lg leading-relaxed text-sm" style={{ color: '#202020' }}>{description}</p>
+
+      {/* Stats Section */}
+      {stats && stats.length > 0 && (
+        <div className="grid grid-cols-2 gap-3 mt-2">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="bg-blue-50/50 rounded-lg p-3 text-center">
+              <div className="text-lg font-bold text-blue-600">{stat.value}</div>
+              <div className="text-xs text-gray-600">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Features Section */}
+      {features && features.length > 0 && (
+        <div className="space-y-2 mt-2">
+          {features.map((feature, idx) => (
+            <div key={idx} className="flex items-start gap-2">
+              <div className="mt-1 p-1.5 bg-blue-100/50 rounded">
+                <feature.icon className="h-4 w-4 text-blue-600" strokeWidth={2} />
+              </div>
+              <div>
+                <div className="font-semibold text-sm text-gray-800">{feature.title}</div>
+                <div className="text-xs text-gray-600">{feature.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
 
     <div

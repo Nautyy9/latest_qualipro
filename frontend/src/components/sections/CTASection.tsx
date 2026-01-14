@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail, Shield, Award, CheckCircle, Star, Users, Clock } from 'lucide-react';
+import AnimatedButton from '../ui/animated-button';
+import AnimatedIcon from '../ui/animated-icon';
 
 const CTASection: React.FC = () => {
   const floatVariants = {
@@ -193,30 +195,39 @@ const CTASection: React.FC = () => {
         </div>
 
         {/* Bottom Guarantee Section */}
-        <div className="mt-20 max-w-6xl mx-auto bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 p-3 rounded-3xl shadow-xl flex flex-col \">
-          <div className="bg-oklch-white-pure/90 backdrop-blur-xl rounded-3xl p-8 border border-oklch-white-pure/50 w-full\">
+        <div className="mt-20 max-w-6xl mx-auto bg-sgray p-3 rounded-3xl shadow-xl flex flex-col \">
+          <div className=" backdrop-blur-xl rounded-3xl p-8  w-full\">
             <div className="grid   grid-cols-1 w-full md:grid-cols-3 gap-8 items-center">
 
               <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center shadow-lg">
-                  <Shield className="text-oklch-white-pure" size={32} />
-                </div>
+                <AnimatedIcon
+                  icon={<Shield className="text-oklch-white-pure" size={32} />}
+                  triggerOnScroll={true}
+                  size="lg"
+                  className="bg-oklch-primary-base rounded-2xl"
+                />
                 <h4 className="font-bold text-oklch-text-dark">100% Guarantee</h4>
                 <p className="text-sm text-oklch-text-gray">Certification success or full refund</p>
               </div>
 
               <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center shadow-lg">
-                  <Star className="text-oklch-white-pure" size={32} />
-                </div>
+                <AnimatedIcon
+                  icon={<Star className="text-oklch-white-pure" size={32} />}
+                  triggerOnScroll={true}
+                  size="lg"
+                  className="bg-oklch-primary-base rounded-2xl"
+                />
                 <h4 className="font-bold text-oklch-text-dark">Expert Team</h4>
                 <p className="text-sm text-oklch-text-gray">Certified NABH assessors & consultants</p>
               </div>
 
               <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center shadow-lg">
-                  <CheckCircle className="text-oklch-white-pure" size={32} />
-                </div>
+                <AnimatedIcon
+                  icon={<CheckCircle className="text-oklch-white-pure" size={32} />}
+                  triggerOnScroll={true}
+                  size="lg"
+                  className="bg-oklch-primary-base rounded-2xl"
+                />
                 <h4 className="font-bold text-oklch-text-dark">End-to-End Support</h4>
                 <p className="text-sm text-oklch-text-gray">From assessment to certification</p>
               </div>
@@ -232,7 +243,7 @@ const CTASection: React.FC = () => {
           </p>
           <Link
             to="/services"
-            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-white-pure px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center gap-2"
+            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-white-pure px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl inline-flex items-center gap-2 transition-all duration-300"
           >
             Explore Our Services
             <ArrowRight size={20} />

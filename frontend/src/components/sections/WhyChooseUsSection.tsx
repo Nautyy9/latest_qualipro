@@ -7,10 +7,11 @@ import { Card, CardContent } from "../ui/card";
 import MotionCard from "../ui/motion-card";
 import { Clock, Shield, Users, Trophy, CheckCircle, Star } from 'lucide-react';
 import { MobileTimeline } from '../ui/mobile-timeline';
-import stepImg1 from "../../../../design_assets/qualipro/service1i.png";
-import stepImg2 from "../../../../design_assets/qualipro/service2.png";
-import stepImg3 from "../../../../design_assets/qualipro/service3.png";
-import stepImg4 from "../../../../design_assets/qualipro/service5ii.png";
+import AnimatedIcon from '../ui/animated-icon';
+import stepImg1 from "../../../../design_assets/qualipro/service1i.webp";
+import stepImg2 from "../../../../design_assets/qualipro/service2.webp";
+import stepImg3 from "../../../../design_assets/qualipro/service3.webp";
+import stepImg4 from "../../../../design_assets/qualipro/service5ii.webp";
 
 const WhyChooseUsSection: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -199,9 +200,12 @@ const WhyChooseUsSection: React.FC = () => {
                 className="group border-transparent  h-full w-full mx-auto smd:w-3/4 md:w-full  cursor-pointer p-3  transition-all bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50  duration-500 hover:shadow-2xl"
               >
                 <CardContent className="flex bg-oklch-white-pure rounded-xl flex-col justify-between   w-full h-full text-center space-y-4 p-6">
-                  <motion.div className="row-span-1 w-20 h-20 bg-oklch-bg-light-blue rounded-full mx-auto flex items-center justify-center group-hover:bg-oklch-primary-base group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-inner  group-hover:shadow-2xl" variants={scaleIn}>
-                    <Icon className="text-oklch-primary-base group-hover:text-oklch-white-pure transition-all duration-300" size={32} />
-                  </motion.div>
+                  <AnimatedIcon
+                    icon={<Icon className="text-oklch-primary-base group-hover:text-oklch-white-pure transition-all duration-300" size={32} />}
+                    triggerOnScroll={true}
+                    size="lg"
+                    className="bg-oklch-bg-light-blue rounded-full group-hover:bg-oklch-primary-base group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-inner group-hover:shadow-2xl"
+                  />
                   <div className="space-y-2 row-span-1 flex flex-col justify-end ">
                     <motion.h3 className="text-xl font-bold group-hover:text-oklch-primary-dark transition-colors duration-300 text-oklch-text-dark" variants={textReveal}>{reason.title}</motion.h3>
                     <motion.p className="text-sm leading-relaxed group-hover:text-oklch-text-gray transition-colors duration-300 text-oklch-text-dark" variants={textReveal}>{reason.description}</motion.p>
@@ -222,9 +226,9 @@ const WhyChooseUsSection: React.FC = () => {
         </motion.div>
 
         {/* Testimonial Highlight */}
-        <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl md:p-8 mb-16 border-0">
-          <Card className="pt-8 px-8 border-sgray bg-sgray ">
-            <CardContent className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="rounded-2xl md:p-8 mb-16 border-0">
+          <Card className="pt-8 px-8 mx-auto max-w-6xl border-sgray bg-sgray ">
+            <CardContent className=" grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <div className="lg:col-span-2  space-y-4">
                 <div className="flex items-center space-x-2 text-accent-500">
                   {[...Array(5)].map((_, i) => (

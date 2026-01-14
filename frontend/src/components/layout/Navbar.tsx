@@ -4,7 +4,7 @@ import { X, Phone, Mail, MenuIcon, Home, Recycle, Briefcase, Check } from 'lucid
 import { Button } from "../ui/button";
 import { Sheet, SheetContent } from "../ui/sheet";
 import { gsap } from 'gsap';
-import logo from "../../../../design_assets/qualipro/logo.png"
+import logo from "../../../../design_assets/qualipro/logo.webp"
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

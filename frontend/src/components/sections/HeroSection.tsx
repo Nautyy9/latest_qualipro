@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Award, Shield, Users } from 'lucide-react';
+import AnimatedButton from '../ui/animated-button';
+import AnimatedIcon from '../ui/animated-icon';
 // logo image imported in Navbar; not used here
 
 
@@ -41,14 +43,18 @@ const HeroSection: React.FC = () => {
               <div className="flex w-max flex-col sm:flex-row gap-4 ">
                 <Link
                   to="/services"
-                  className="text-oklch-white-pure px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-2 bg-oklch-primary-dark hover:bg-oklch-primary-darker group/btn"
+                  className="text-oklch-white-pure px-8 py-4 rounded-full font-bold shadow-xl flex items-center justify-center gap-2 bg-oklch-primary-dark hover:bg-oklch-primary-darker group/btn transition-all duration-300"
+                  onClick={(e) => {
+                    // Prevent default only if we want to handle it with animation
+                    // For now, let the link work normally
+                  }}
                 >
                   Our Services
                   <ArrowRight size={20} className='group-hover/btn:translate-x-2 duration-300 transition-all group-hover/btn:-rotate-45 group-hover/btn:scale-110' />
                 </Link>
                 <Link
                   to="/contact"
-                  className="bg-transparent px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-oklch-primary-base border-2 border-oklch-primary-base hover:bg-oklch-secondary-light"
+                  className="bg-transparent px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 text-oklch-primary-base border-2 border-oklch-primary-base hover:bg-oklch-secondary-light transition-all duration-300 transform hover:scale-105"
                 >
                   Get Consultation
                   <Shield size={20} />
@@ -58,23 +64,32 @@ const HeroSection: React.FC = () => {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-oklch-border-light">
                 <div className="text-center">
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full mx-auto mb-2 bg-oklch-secondary-light">
-                    <Award className="text-oklch-primary-medium" size={20} />
-                  </div>
+                  <AnimatedIcon
+                    icon={<Award className="text-oklch-primary-medium" size={20} />}
+                    triggerOnScroll={true}
+                    size="md"
+                    className="bg-oklch-secondary-light rounded-full mb-2"
+                  />
                   <div className="text-lg sm:text-2xl font-bold text-oklch-text-dark">500+</div>
                   <div className="text-xs sm:text-sm text-oklch-text-dark">Certified Hospitals</div>
                 </div>
                 <div className="text-center flex flex-col justify-center items-center">
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full mb-2 bg-oklch-accent-light border border-oklch-accent-medium">
-                    <Shield className="text-oklch-accent-bright" size={20} />
-                  </div>
+                  <AnimatedIcon
+                    icon={<Shield className="text-oklch-accent-bright" size={20} />}
+                    triggerOnScroll={true}
+                    size="md"
+                    className="bg-oklch-accent-light border border-oklch-accent-medium rounded-full mb-2"
+                  />
                   <div className="text-lg sm:text-2xl font-bold text-oklch-text-dark">99%</div>
                   <div className="text-xs sm:text-sm text-oklch-text-dark">Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full mx-auto mb-2 bg-oklch-secondary-light">
-                    <Users className="text-oklch-primary-medium" size={20} />
-                  </div>
+                  <AnimatedIcon
+                    icon={<Users className="text-oklch-primary-medium" size={20} />}
+                    triggerOnScroll={true}
+                    size="md"
+                    className="bg-oklch-secondary-light rounded-full mb-2"
+                  />
                   <div className="text-lg sm:text-2xl font-bold text-oklch-text-dark">10+</div>
                   <div className="text-xs sm:text-sm text-oklch-text-dark">Years Experience</div>
                 </div>
@@ -90,8 +105,8 @@ const HeroSection: React.FC = () => {
                   <div className="relative">
                     <div className="absolute -top-2 -left-4 w-3 h-3 rounded-full animate-pulse bg-oklch-primary-bright"></div>
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-500" style={{ background: 'linear-gradient(to bottom right, var(--color-primary-base), var(--color-primary-darker))' }}>
-                        <Award className="text-white" size={28} />
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-500 bg-gradient-to-br from-oklch-primary-base to-oklch-primary-darker" >
+                        <Award className="text-oklch-white-pure" size={28} />
                       </div>
                       <div>
                         <h4 className="font-bold text-oklch-text-dark-alt">NABH Certified</h4>

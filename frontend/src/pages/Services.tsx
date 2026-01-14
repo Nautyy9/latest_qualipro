@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { floatUp, floatUpRotate, floatUpScale } from '../utils/motion';
-import service1 from "../../../design_assets/qualipro/service1i.png"
-import service2 from "../../../design_assets/qualipro/service2.png"
-import service3 from "../../../design_assets/qualipro/service3.png"
-import service4 from "../../../design_assets/qualipro/service5ii.png"
+import service1 from "../../../design_assets/qualipro/service1i.webp"
+import service2 from "../../../design_assets/qualipro/service2.webp"
+import service3 from "../../../design_assets/qualipro/service3.webp"
+import service4 from "../../../design_assets/qualipro/service5ii.webp"
 
 
 const sectionVariants = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } } as const;
