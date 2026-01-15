@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, MapPin, Star, Trophy, Users, Clock, Shield, TrendingUp } from 'lucide-react';
+import AnimatedButton from '../ui/animated-button';
+import AnimatedIcon from '../ui/animated-icon';
 
 // Counter component for animating numbers
 const CounterNumber: React.FC<{ value: string; duration?: number }> = ({ value, duration = 2 }) => {
@@ -133,7 +135,7 @@ const StatsSection: React.FC = () => {
 
         {/* Stats Grid */}
         <motion.div
-          className="mx-16 grid grid-cols-1 bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 p-4 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl"
+          className="smd:mx-16 lg:mx-8 lxl:mx-16 grid grid-cols-1 bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 p-4 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -154,9 +156,13 @@ const StatsSection: React.FC = () => {
                   {/* Content */}
                   <div className="flex flex-col h-full justify-start relative space-y-4">
                     {/* Icon */}
-                    <div className={`w-14 h-14 bg-oklch-secondary-light/50 border border-oklch-secondary-light/50 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="text-oklch-primary-base" size={28} />
-                    </div>
+                    <AnimatedIcon
+                      icon={<Icon className="text-oklch-primary-base" size={28} />}
+                      size="md"
+                      triggerOnScroll={true}
+                      centered={false}
+                      className="bg-oklch-secondary-light/50 border border-oklch-secondary-light/50 rounded-lg group-hover:scale-110 transition-transform duration-300"
+                    />
 
                     {/* Number */}
                     <div className="space-y-1">
@@ -181,7 +187,7 @@ const StatsSection: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-sgray rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+          <div className="bg-sgray rounded-2xl shadow-xl p-8 max-w-6xl mx-auto">
             <h3 className="text-2xl font-bold text-oklch-primary-base mb-4">
               Join 500+ Healthcare Organizations Who Trust QualiPro
             </h3>
@@ -190,12 +196,20 @@ const StatsSection: React.FC = () => {
               your organization achieve certification and operational excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary bg-oklch-primary-base text-oklch-white-pure hover:bg-oklch-primary-dark">
+              <AnimatedButton
+                variant="primary"
+                size="md"
+                animationDuration={0.25}
+              >
                 Schedule Consultation
-              </button>
-              <button className="btn-secondary bg-oklch-white-pure text-oklch-primary-base border-oklch-primary-base hover:bg-oklch-secondary-light/50">
+              </AnimatedButton>
+              <AnimatedButton
+                variant="secondary"
+                size="md"
+                animationDuration={0.25}
+              >
                 Download Case Studies
-              </button>
+              </AnimatedButton>
             </div>
           </div>
         </div>

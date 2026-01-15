@@ -161,7 +161,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
       {/* Full-height SVG container for timeline lines */}
       <svg
         ref={svgRef}
-        className="absolute left-3 sm:left-12 top-0 w-8 h-full pointer-events-none"
+        className="absolute left-4 sm:left-12 top-0 w-8 h-full pointer-events-none"
         preserveAspectRatio="none"
         aria-hidden
         style={{ zIndex: 10 }}
@@ -202,7 +202,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="space-y-16 relative">
         {/* Step nodes and Cards paired in rows */}
         {data.map((_, index) => (
-          <div key={index} className="grid grid-cols-[50px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 px-4 items-center">
+          <div key={index} className="grid grid-cols-[50px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 px-1 sm:px-4 items-center">
             {/* Left Column: Timeline line and step nodes */}
             <div className="relative flex items-center sm:justify-center">
               {/* Step node - centered in this column */}

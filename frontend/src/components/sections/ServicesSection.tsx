@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { staggerContainer, textReveal } from '../../utils/motion';
-import { Award, Stethoscope, Smartphone, BookOpen, Users } from 'lucide-react';
+import { Award, Stethoscope, Smartphone, BookOpen, Users, CheckCircle, Target, Zap, BarChart3 } from 'lucide-react';
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
 
 const ServicesSection: React.FC = () => {
@@ -11,7 +11,7 @@ const ServicesSection: React.FC = () => {
       name: 'NABH Certification & Accreditation',
       description: 'Complete NABH certification support from gap assessment to successful accreditation with expert guidance.',
       Icon: Award,
-      img: '/images/service1.png',
+      img: '/images/service1.webp',
       href: '/services',
       cta: 'Learn more',
       background: (
@@ -29,20 +29,20 @@ const ServicesSection: React.FC = () => {
       background: (
         <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
-      className: 'lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2',
+      className: 'lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2',
     },
     {
       id: 3,
       name: 'Digital Health Solutions',
       description: 'Modern technology solutions for healthcare management, certification tracking, and digital transformation.',
       Icon: Smartphone,
-      img: '/images/service2.png',
+      img: '/images/service2.webp',
       href: '/services',
       cta: 'Learn more',
       background: (
         <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
-      className: 'lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-4',
+      className: 'lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4',
     },
     {
       id: 4,
@@ -61,14 +61,24 @@ const ServicesSection: React.FC = () => {
       name: 'Staff Management & Support',
       description: 'Comprehensive staff management solutions to optimize healthcare workforce efficiency and satisfaction.',
       Icon: Users,
-      img: '/images/service3.png',
-      img2: '/images/service4.png',
+      img2: '/images/service3.webp',
       href: '/services',
       cta: 'Learn more',
       background: (
         <div className="absolute inset-0  bg-oklch-white-pure" />
       ),
-      className: 'lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-4',
+      className: 'lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-4',
+      stats: [
+        { value: '500+', label: 'Staff Trained' },
+        { value: '99%', label: 'Satisfaction' },
+        { value: '24/7', label: 'Support' },
+        { value: '50+', label: 'Hospitals' }
+      ],
+      features: [
+        { icon: Target, title: 'Recruitment', description: 'Strategic hiring & placement support' },
+        { icon: Zap, title: 'Training', description: 'Continuous skill development programs' },
+        { icon: BarChart3, title: 'Performance', description: 'Analytics & improvement tracking' }
+      ]
     },
   ];
 

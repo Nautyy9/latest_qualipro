@@ -4,6 +4,8 @@ import MotionCard from "../ui/motion-card";
 import { CardContent } from "../ui/card";
 import { Star, Quote } from 'lucide-react';
 import { textReveal } from '../../utils/motion';
+import { starItem, starsContainer } from '../../utils/advanced-motion';
+import AnimatedIcon from '../ui/animated-icon';
 
 const TestimonialsSection: React.FC = () => {
   const [isHeroHovered, setIsHeroHovered] = useState(false);
@@ -14,7 +16,7 @@ const TestimonialsSection: React.FC = () => {
       name: 'Trusted By Many',
       position: '',
       organization: '',
-      image: '/images/happy_customer.png',
+      image: '/images/happy_customer.webp',
       rating: 0,
       testimonial: 'Join 500+ leading healthcare organizations that trust QualiPro to elevate their quality standards. Our clients—from Medical Directors to Quality Heads—share their transformative journeys. Discover authentic success stories, proven methodologies, and measurable results that have reshaped India\'s healthcare quality landscape.',
       shortTestimonial: 'Trusted by 500+ healthcare organizations for quality excellence.',
@@ -142,16 +144,30 @@ const TestimonialsSection: React.FC = () => {
               <MotionCard key={testimonial.id} className="w-full border-oklch-border-primary/50  h-full js-testimonial  rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-500" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
                 <CardContent className="p-8  h-full flex flex-col justify-between relative">
                   {/* Quote Icon */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-oklch-secondary-lighter/50 rounded-full flex items-center justify-center group-hover:bg-oklch-secondary-light/50 transition-colors duration-300">
-                    <Quote className="text-oklch-primary-dark" size={24} />
+                  <div className="absolute top-4 right-4">
+                    <AnimatedIcon
+                      icon={<Quote className="text-oklch-primary-dark" size={24} />}
+                      triggerOnScroll={true}
+                      size="lg"
+                      centered={false}
+                      className="bg-oklch-secondary-lighter/50 rounded-full group-hover:bg-oklch-secondary-light/50 transition-colors duration-300"
+                    />
                   </div>
 
                   {/* Rating */}
-                  <div className="flex items-center space-x-1 mb-4">
+                  <motion.div
+                    className="flex items-center space-x-1 mb-4"
+                    variants={starsContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                      <motion.div key={i} variants={starItem}>
+                        <Star size={16} className="text-yellow-400 fill-current" />
+                      </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
 
                   {/* Testimonial Text */}
                   <blockquote className="text-oklch-text-gray leading-relaxed mb-6 italic">
@@ -160,11 +176,17 @@ const TestimonialsSection: React.FC = () => {
 
                   {/* Client Info */}
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-oklch-primary-dark rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-oklch-white-pure font-bold text-sm">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
+                    <AnimatedIcon
+                      icon={
+                        <span className="text-oklch-white-pure font-bold text-sm">
+                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      }
+                      triggerOnScroll={true}
+                      size="md"
+                      centered={false}
+                      className="bg-oklch-primary-dark rounded-full flex-shrink-0"
+                    />
                     <div className="flex-1">
                       <div className="font-semibold text-oklch-text-dark">{testimonial.name}</div>
                       <div className="text-sm text-oklch-text-gray">{testimonial.position}</div>
@@ -179,18 +201,26 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="bg-sgray rounded-2xl p-8  text-oklch-text-dark text-center">
+        <div className="bg-sgray rounded-2xl mt-20 mx-auto max-w-6xl p-8  text-oklch-text-dark text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-oklch-primary-base">500+</div>
               <div className="">Happy Clients</div>
             </div>
             <div className="space-y-3">
-              <div className="flex justify-center space-x-1">
+              <motion.div
+                className="flex justify-center space-x-1"
+                variants={starsContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.5 }}
+              >
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={24} className="text-yellow-400 fill-current" />
+                  <motion.div key={i} variants={starItem}>
+                    <Star size={24} className="text-yellow-400 fill-current" />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
               <div className="text-lg font-semibold">4.9/5 Client Rating</div>
               <div className=" text-sm">Based on 500+ reviews</div>
             </div>
