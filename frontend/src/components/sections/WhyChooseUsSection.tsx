@@ -93,11 +93,11 @@ const WhyChooseUsSection: React.FC = () => {
           start: id === 0 ? 'top center+=70px' : id === 1 ? 'top center+=20px' : id === 2 ? 'top center-=40px' : "top center-=80px",
           onEnter: () => {
             el.classList.replace("bg-oklch-white-pure", 'bg-oklch-primary-base');
-            el.classList.add('text-white');
+            el.classList.add('text-oklch-pure-white');
             const check = el.querySelector('.js-check') as HTMLElement | null;
             const stars = el.querySelectorAll('.js-star');
             if (check) {
-              check.classList.replace('text-oklch-primary-base', 'text-white');
+              check.classList.replace('text-oklch-primary-base', 'text-oklch-pure-white');
               check.textContent = '✓';
               const tl = gsap.timeline({ defaults: { duration: 0.3 } });
               tl.to(check, { scale: 2.2, duration: 0.25, ease: 'back.out(3)' })
@@ -109,10 +109,10 @@ const WhyChooseUsSection: React.FC = () => {
           },
           onLeaveBack: () => {
             el.classList.replace('bg-oklch-primary-base', "bg-oklch-white-pure");
-            el.classList.remove('text-white');
+            el.classList.remove('text-oklch-pure-white');
             const check = el.querySelector('.js-check') as HTMLElement | null;
             if (check) {
-              check.classList.replace('text-white', 'text-oklch-primary-base');
+              check.classList.replace('text-oklch-pure-white', 'text-oklch-primary-base');
               const stepId = nodeRefs.current.indexOf(el);
               check.textContent = String(stepId + 1);
             }
@@ -174,7 +174,7 @@ const WhyChooseUsSection: React.FC = () => {
         >
           <span className="inline-block  mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure  px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Why Choose Us •</span>
           <motion.h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark" variants={textReveal}>
-            Why Choose QualiPro as Your <span className="text-accent-600">Quality Partner</span>
+            Why Choose QualiPro as Your <span className="text-oklch-accent-bright">Quality Partner</span>
           </motion.h2>
           <motion.p className="text-xl text-oklch-text-gray max-w-3xl mx-auto leading-relaxed" variants={textReveal}>
             We bring together expertise, experience, and innovation to deliver exceptional
@@ -230,9 +230,9 @@ const WhyChooseUsSection: React.FC = () => {
           <Card className="pt-8 px-8 mx-auto max-w-6xl border-sgray bg-sgray ">
             <CardContent className=" grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <div className="lg:col-span-2  space-y-4">
-                <div className="flex items-center space-x-2 text-accent-500">
+                <div className="flex items-center space-x-2 text-oklch-accent-bright">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} className='text-yellow-200/50 fill-yellow-400 ' />
+                    <Star key={i} size={20} className='text-yellow-400 fill-current' />
                   ))}
                 </div>
                 <blockquote className="text-lg italic text-oklch-text-gray leading-relaxed">
@@ -245,8 +245,8 @@ const WhyChooseUsSection: React.FC = () => {
                 </div>
               </div>
               <div className="text-center lg:text-right">
-                <div className="inline-flex items-center space-x-2 bg-oklch-primary-base *:text-white px-6 py-3 rounded-full shadow-md">
-                  <CheckCircle className="text-green-400" size={24} />
+                <div className="inline-flex items-center space-x-2 bg-oklch-primary-base *:text-oklch-pure-white px-6 py-3 rounded-full shadow-md">
+                  <CheckCircle className="text-oklch-success-base" size={24} />
                   <span className="font-semibold ">Verified Client</span>
                 </div>
               </div>
@@ -271,7 +271,7 @@ const WhyChooseUsSection: React.FC = () => {
                     strokeWidth="0.3"
                     strokeLinecap="round"
                     strokeDasharray="1 3" strokeDashoffset="2"
-                    className="text-neutral-400 js-process-line"
+                    className="text-oklch-neutral-400 js-process-line"
                   />
                   {/* Blue progress overlay line - starts from center and progresses with scroll */}
                   <path
@@ -316,7 +316,7 @@ const WhyChooseUsSection: React.FC = () => {
                       <div className="relative flex items-stretch justify-center">
                         {/* Per-row SVG dotted line for mobile to keep continuity */}
                         <svg className="md:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 h-full" width="16" preserveAspectRatio="none" aria-hidden>
-                          <line x1="8" x2="8" y1="0" y2="100%" strokeWidth="2" strokeLinecap="round" strokeDasharray="1 4" className="stroke-neutral-300" />
+                          <line x1="8" x2="8" y1="0" y2="100%" strokeWidth="2" strokeLinecap="round" strokeDasharray="1 4" className="stroke-oklch-neutral-200" />
                         </svg>
 
                         {/* Step node */}

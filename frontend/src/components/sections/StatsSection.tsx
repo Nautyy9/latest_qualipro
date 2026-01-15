@@ -125,7 +125,7 @@ const StatsSection: React.FC = () => {
         <div className="text-center space-y-4 mb-16">
           <span className="inline-block mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Our Stats •</span>
           <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark">
-            Numbers That Speak Our <span className="text-red-600">Excellence</span>
+            Numbers That Speak Our <span className="text-oklch-error-base">Excellence</span>
           </h2>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed text-oklch-text-dark">
             Our track record demonstrates our commitment to healthcare quality and

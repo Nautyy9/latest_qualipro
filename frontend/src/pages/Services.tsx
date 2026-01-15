@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { floatUp, floatUpRotate, floatUpScale } from '../utils/motion';
-import service1 from "../../../design_assets/qualipro/service1i.png"
-import service2 from "../../../design_assets/qualipro/service2.png"
-import service3 from "../../../design_assets/qualipro/service3.png"
-import service4 from "../../../design_assets/qualipro/service5ii.png"
+import service1 from "../../../design_assets/qualipro/service1i.webp"
+import service2 from "../../../design_assets/qualipro/service2.webp"
+import service3 from "../../../design_assets/qualipro/service3.webp"
+import service4 from "../../../design_assets/qualipro/service5ii.webp"
 
 
 const sectionVariants = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } } as const;
@@ -113,7 +113,7 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Services - Award-Winning Layout */}
+
       <section className="py-16 lg:py-24">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           {services.map((service, index) => (
@@ -134,9 +134,9 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="inline-flex items-center gap-2"
+                  className=" *:font-serif"
                 >
-                  <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Service</span>
+                  <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Service {" "} </span>
                   <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
                 </motion.div>
 
@@ -249,12 +249,12 @@ const Services: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-2"
+                    className="space-y-2 *:font-serif"
                   >
-                    <div className="inline-flex items-center gap-2">
-                      <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Service</span>
-                      <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
-                    </div>
+
+                    <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Service {" "}</span>
+                    <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
+
                     <h2 className="text-2xl sm:text-3xl font-bold text-oklch-primary-dark leading-tight">{service.title}</h2>
                   </motion.div>
 
@@ -360,8 +360,14 @@ const Services: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
+                    className='*:font-serif'
                   >
-                    <span className="inline-block mb-3 text-xs font-semibold text-oklch-primary-dark uppercase tracking-wider">Service {index + 1}</span>
+                    <span className="inline-block mb-3 text-xs font-semibold text-oklch-primary-dark uppercase tracking-wider">Service
+                      {" "}
+                      <span className='text-3xl text-oklch-primary-dark'>
+                        {index + 1}
+                      </span>
+                    </span>
                     <h2 className="text-3xl xl:text-4xl font-bold mb-4 text-oklch-primary-dark leading-tight">{service.title}</h2>
                     <p className="text-base text-oklch-text-gray mb-8 leading-relaxed">
                       {service.description}

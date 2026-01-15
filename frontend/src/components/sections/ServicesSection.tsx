@@ -24,6 +24,7 @@ const ServicesSection: React.FC = () => {
       name: 'Healthcare Quality Consulting',
       description: 'Expert consulting services to improve healthcare quality, patient safety, and operational excellence.',
       Icon: Stethoscope,
+      img2: '/images/service4.webp',
       href: '/services',
       cta: 'Learn more',
       background: (
@@ -49,6 +50,7 @@ const ServicesSection: React.FC = () => {
       name: 'Training & Development',
       description: 'Comprehensive training programs for healthcare professionals to enhance skills and knowledge.',
       Icon: BookOpen,
+      img2: '/images/service5i.webp',
       href: '/services',
       cta: 'Learn more',
       background: (
@@ -61,7 +63,7 @@ const ServicesSection: React.FC = () => {
       name: 'Staff Management & Support',
       description: 'Comprehensive staff management solutions to optimize healthcare workforce efficiency and satisfaction.',
       Icon: Users,
-      img2: '/images/service3.webp',
+      img: '/images/service3.webp',
       href: '/services',
       cta: 'Learn more',
       background: (

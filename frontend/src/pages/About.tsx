@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import { floatUp, floatUpRotate, floatUpScale } from '../utils/motion';
 
 const sectionVariants = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } } as const;
 
@@ -16,7 +17,11 @@ const About: React.FC = () => {
         'Change enablement and on-ground training',
         'Outcome-driven dashboards and reviews',
       ],
-      image: '/images/Our Mission.png',
+      image: '/images/Our Mission.webp',
+      pills: [
+        { text: '🎯 Mission-Driven', position: 'top-4 left-4', animation: floatUp },
+        { text: '💪 Excellence', position: 'bottom-6 right-4', animation: floatUpRotate },
+      ],
     },
     {
       title: 'Our Vision',
@@ -27,7 +32,11 @@ const About: React.FC = () => {
         'Audit simulations and corrective actions',
         'Leadership alignment and cadence',
       ],
-      image: '/images/vision.png',
+      image: '/images/vision.webp',
+      pills: [
+        { text: '🔮 Visionary', position: 'top-6 right-4', animation: floatUpScale },
+        { text: '🚀 Forward-Thinking', position: 'bottom-4 left-4', animation: floatUp },
+      ],
     },
     {
       title: 'Our Expertise',
@@ -38,7 +47,11 @@ const About: React.FC = () => {
         'Deep domain + product thinking',
         'Sustained post-cert support',
       ],
-      image: '/images/expertise.png',
+      image: '/images/expertise.webp',
+      pills: [
+        { text: '🏅 Expert Team', position: 'top-5 left-5', animation: floatUpRotate },
+        { text: '⭐ Experienced', position: 'bottom-5 right-5', animation: floatUpScale },
+      ],
     },
   ];
 
@@ -68,7 +81,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Sections - Award-Winning Layout */}
       <section className="py-16 lg:py-24">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           {sections.map((section, index) => (
@@ -81,7 +93,7 @@ const About: React.FC = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              {/* Mobile Only: Award-Winning Design */}
+              {/* Mobile Only */}
               <div className="md:hidden space-y-6">
                 {/* Section Number Badge */}
                 <motion.div
@@ -89,10 +101,10 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="inline-flex items-center gap-2"
+                  className="*:font-serif"
                 >
-                  <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Section</span>
-                  <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
+                  <span className=" text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Section {" "}</span>
+                  <span className=" text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
                 </motion.div>
 
                 {/* Title */}
@@ -130,6 +142,18 @@ const About: React.FC = () => {
                   {/* Main card */}
                   <Card className="relative overflow-hidden bg-oklch-white-pure shadow-lg h-72 sm:h-80 flex items-center justify-center border-0">
                     <img src={section.image} alt={section.title} className='h-full w-full object-contain p-6' />
+
+                    {/* Floating Pills */}
+                    {section.pills?.map((pill, pillIndex) => (
+                      <motion.div
+                        key={pillIndex}
+                        className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-oklch-primary-base to-oklch-primary-dark text-oklch-pure-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border-3 border-oklch-pure-white shadow-[0_8px_24px_rgba(var(--oklch-primary-base-rgb),0.4)]`}
+                        variants={pill.animation}
+                        animate="animate"
+                      >
+                        {pill.text}
+                      </motion.div>
+                    ))}
                   </Card>
                 </motion.div>
 
@@ -182,7 +206,7 @@ const About: React.FC = () => {
                 )}
               </div>
 
-              {/* Tablet (md-lg): Balanced Card Layout */}
+              {/*  (md-lg) */}
               <div className="hidden md:block lg:hidden">
                 <div className="space-y-8">
                   {/* Header Section */}
@@ -191,12 +215,12 @@ const About: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-2"
+                    className="space-y-2 *:font-serif"
                   >
-                    <div className="inline-flex items-center gap-2">
-                      <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Section</span>
-                      <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
-                    </div>
+
+                    <span className="text-xs  font-bold text-oklch-primary-dark uppercase tracking-widest">Section {" "}</span>
+                    <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
+
                     <h2 className="text-2xl sm:text-3xl font-bold text-oklch-primary-dark leading-tight">{section.title}</h2>
                   </motion.div>
 
@@ -210,9 +234,9 @@ const About: React.FC = () => {
                     {section.description}
                   </motion.p>
 
-                  {/* Two Column Layout - consistent for all sections */}
+                  {/* Two Column Layout */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    {/* Image Card - always on left */}
+                    {/* Image Card */}
                     <motion.div
                       className="relative"
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -227,6 +251,18 @@ const About: React.FC = () => {
                         {/* Main card */}
                         <Card className="relative overflow-hidden bg-oklch-white-pure shadow-2xl hover:shadow-3xl transition-all duration-500 border-0 aspect-square flex items-center justify-center">
                           <img src={section.image} alt={section.title} className='h-full w-full object-contain p-8' />
+
+                          {/* Floating Pills */}
+                          {section.pills?.map((pill, pillIndex) => (
+                            <motion.div
+                              key={pillIndex}
+                              className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-oklch-primary-base to-oklch-primary-dark text-oklch-pure-white px-4 py-2 rounded-full text-sm font-semibold border-4 border-oklch-pure-white shadow-[0_8px_24px_rgba(var(--oklch-primary-base-rgb),0.4)]`}
+                              variants={pill.animation}
+                              animate="animate"
+                            >
+                              {pill.text}
+                            </motion.div>
+                          ))}
                         </Card>
                       </div>
                     </motion.div>
@@ -290,8 +326,14 @@ const About: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
+                    className='*:font-serif'
                   >
-                    <span className="inline-block mb-3 text-xs font-semibold text-oklch-primary-dark uppercase tracking-wider">Section {index + 1}</span>
+                    <span className="inline-block mb-3 text-xs font-semibold text-oklch-primary-dark uppercase tracking-wider">Section {"  "}
+                      <span className='text-3xl font-black text-oklch-primary-dark'>
+
+                        {index + 1}
+                      </span>
+                    </span>
                     <h2 className="text-3xl xl:text-4xl font-bold mb-4 text-oklch-primary-dark leading-tight">{section.title}</h2>
                     <p className="text-base text-oklch-text-gray mb-8 leading-relaxed">
                       {section.description}
@@ -338,6 +380,18 @@ const About: React.FC = () => {
                     {/* Main card */}
                     <Card className="relative overflow-hidden h-full flex items-center justify-center bg-oklch-white-pure shadow-lg hover:shadow-3xl transition-all duration-500 border-0">
                       <img src={section.image} alt={section.title} className='h-full w-full object-contain p-4 ' />
+
+                      {/* Floating Pills */}
+                      {section.pills?.map((pill, pillIndex) => (
+                        <motion.div
+                          key={pillIndex}
+                          className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-oklch-primary-base to-oklch-primary-dark text-oklch-pure-white px-4 py-2 rounded-full text-sm font-semibold border-2 border-oklch-pure-white shadow-[0_8px_24px_rgba(var(--oklch-primary-base-rgb),0.3)]`}
+                          variants={pill.animation}
+                          animate="animate"
+                        >
+                          {pill.text}
+                        </motion.div>
+                      ))}
                     </Card>
                   </div>
 

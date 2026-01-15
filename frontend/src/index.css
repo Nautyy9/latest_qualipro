@@ -60,7 +60,7 @@
     @apply box-border;
   }
   lavender {
-    background-color:  #C4D7FF
+    background-color: #C4D7FF;
   }
 }
 
@@ -118,6 +118,34 @@ span, p , h1 , h2, h3, h4, h5, h6 {
     /* Additional Colors */
     --color-white-pure: 1 0 0; /* white / off-white */
     --color-purple-light: 0.87 0.10 281; /* purple-200 */
+
+    /* Error/Status Colors */
+    --color-error-light: 0.92 0.08 29; /* red-100 */
+    --color-error-base: 0.70 0.20 29; /* red-500 */
+    --color-error-dark: 0.56 0.22 29; /* red-600 */
+
+    /* Success Colors */
+    --color-success-light: 0.88 0.10 142; /* green-100 */
+    --color-success-base: 0.52 0.15 142; /* green-500 */
+    --color-success-dark: 0.45 0.15 142; /* green-600 */
+
+    /* Warning Colors */
+    --color-warning-light: 0.92 0.09 70; /* amber-100 */
+    --color-warning-base: 0.71 0.18 70; /* amber-500 */
+    --color-warning-dark: 0.60 0.18 70; /* amber-600 */
+
+    /* Neutral Gray Palette */
+    --color-neutral-50: 0.99 0.001 0; /* neutral-50 */
+    --color-neutral-100: 0.97 0.002 0; /* neutral-100 */
+    --color-neutral-200: 0.90 0.002 0; /* neutral-200 */
+    --color-neutral-400: 0.58 0.01 0; /* neutral-400 */
+    --color-neutral-500: 0.55 0.02 0; /* neutral-500 */
+    --color-neutral-600: 0.46 0.02 0; /* neutral-600 */
+    --color-neutral-700: 0.40 0.02 0; /* neutral-700 */
+    --color-neutral-900: 0.28 0.01 0; /* neutral-900 */
+
+    /* Pure White */
+    --color-pure-white: 1 0 0; /* pure white */
   }
 }
 

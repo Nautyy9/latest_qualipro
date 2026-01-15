@@ -69,7 +69,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
   const triggerStepAnimation = (nodeElement: HTMLDivElement, animate: boolean = true) => {
     // Change background color
     nodeElement.classList.remove("bg-oklch-white-pure");
-    nodeElement.classList.add("bg-blue-600");
+    nodeElement.classList.add("bg-oklch-primary-dark");
     nodeElement.childNodes.forEach((child) => {
       if (child instanceof HTMLElement) {
         child.style.color = "white";
@@ -130,7 +130,7 @@ export const MobileTimeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const revertStepAnimation = (nodeElement: HTMLDivElement) => {
     // Revert background color back to original
-    nodeElement.classList.remove("bg-blue-600");
+    nodeElement.classList.remove("bg-oklch-primary-dark");
     nodeElement.classList.add("bg-oklch-white-pure");
 
     // Revert text color back to blue

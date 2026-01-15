@@ -45,7 +45,7 @@ const CTASection: React.FC = () => {
           <span className="inline-block  mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure  px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Get Started •</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-oklch-text-dark">
             Ready to <span className="text-oklch-primary-base">Transform</span><br />
-            Your <span className="text-red-600">Healthcare</span> Future?
+            Your <span className="text-oklch-error-base">Healthcare</span> Future?
           </h2>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed text-oklch-text-dark">
             Join 500+ healthcare organizations who've achieved excellence with QualiPro.
@@ -79,10 +79,10 @@ const CTASection: React.FC = () => {
                       </div>
                       <div className='flex flex-col p-5'>
                         <h3 className="text-2xl lg:text-xl xl:text-2xl font-bold text-oklch-white-pure mb-2">Start Your Journey</h3>
-                        <p className="text-oklch-secondary-lighter text-sm mb-4">Healthcare Excellence Awaits</p>
+                        <p className="text-oklch-pure-white text-sm mb-4">Healthcare Excellence Awaits</p>
                         <Link
                           to="/contact"
-                          className="bg-oklch-white-pure text-sm text-oklch-primary-base px-6 lg:px-2 xl:px-6 py-3 rounded-full font-bold hover:bg-oklch-secondary-lighter transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
+                          className="bg-oklch-pure-white text-sm text-oklch-primary-base px-6 lg:px-2 xl:px-6 py-3 rounded-full font-bold hover:bg-oklch-secondary-lighter transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
                         >
                           Get Free Consultation
                           <ArrowRight size={18} />
@@ -107,7 +107,7 @@ const CTASection: React.FC = () => {
                   >
                     <div className="text-center space-y-4">
                       <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                        <Phone className="text-oklch-white-pure" size={32} />
+                        <Phone className="text-oklch-pure-white" size={32} />
                       </div>
                       <h3 className="text-xl font-bold text-oklch-text-dark">Direct Expert Line</h3>
                       <p className="text-oklch-text-gray text-sm">Speak with our NABH specialists instantly</p>
@@ -141,21 +141,21 @@ const CTASection: React.FC = () => {
                     className="relative   text-center space-y-4 bg-oklch-white-pure/95 rounded-2xl p-8 h-max backdrop-blur-xl hover:shadow-3xl transition-all duration-500 group  z-10 "
                   >
                     <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                      <Users className="text-oklch-white-pure" size={32} />
+                      <Users className="text-oklch-pure-white" size={32} />
                     </div>
                     <h3 className="text-xl font-bold text-oklch-text-dark">Proven Results</h3>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-oklch-text-gray">Success Rate</span>
-                        <span className="text-lg font-bold text-oklch-primary-base">99%</span>
+                        <span className="text-lg font-bold text-oklch-text-dark">99%</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-oklch-text-gray">Hospitals Certified</span>
-                        <span className="text-lg font-bold text-oklch-primary-base">500+</span>
+                        <span className="text-lg font-bold text-oklch-text-dark">500+</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-oklch-text-gray">Avg. Timeline</span>
-                        <span className="text-lg font-bold text-oklch-primary-base">6 Months</span>
+                        <span className="text-lg font-bold text-oklch-text-dark">6 Months</span>
                       </div>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ const CTASection: React.FC = () => {
                     className="text-center space-y-4 bg-oklch-white-pure/95 backdrop-blur-xl rounded-3xl p-8 h-full hover:shadow-3xl transition-all duration-500 group relative z-10"
                   >
                     <div className="w-16 h-16 bg-oklch-primary-base rounded-2xl mx-auto flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                      <Mail className="text-oklch-white-pure" size={32} />
+                      <Mail className="text-oklch-pure-white" size={32} />
                     </div>
                     <h3 className="text-xl font-bold text-oklch-text-dark">Email Consultation</h3>
                     <p className="text-oklch-text-gray text-sm">Get detailed proposals & documentation</p>
@@ -201,7 +201,7 @@ const CTASection: React.FC = () => {
 
               <div className="text-center space-y-3">
                 <AnimatedIcon
-                  icon={<Shield className="text-oklch-white-pure" size={32} />}
+                  icon={<Shield className="text-oklch-pure-white" size={32} />}
                   triggerOnScroll={true}
                   size="lg"
                   className="bg-oklch-primary-base rounded-2xl"
@@ -212,7 +212,7 @@ const CTASection: React.FC = () => {
 
               <div className="text-center space-y-3">
                 <AnimatedIcon
-                  icon={<Star className="text-oklch-white-pure" size={32} />}
+                  icon={<Star className="text-oklch-pure-white" size={32} />}
                   triggerOnScroll={true}
                   size="lg"
                   className="bg-oklch-primary-base rounded-2xl"
@@ -223,7 +223,7 @@ const CTASection: React.FC = () => {
 
               <div className="text-center space-y-3">
                 <AnimatedIcon
-                  icon={<CheckCircle className="text-oklch-white-pure" size={32} />}
+                  icon={<CheckCircle className="text-oklch-pure-white" size={32} />}
                   triggerOnScroll={true}
                   size="lg"
                   className="bg-oklch-primary-base rounded-2xl"
@@ -243,7 +243,7 @@ const CTASection: React.FC = () => {
           </p>
           <Link
             to="/services"
-            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-white-pure px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl inline-flex items-center gap-2 transition-all duration-300"
+            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-pure-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl inline-flex items-center gap-2 transition-all duration-300"
           >
             Explore Our Services
             <ArrowRight size={20} />

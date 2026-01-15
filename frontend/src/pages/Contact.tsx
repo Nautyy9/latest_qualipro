@@ -193,9 +193,9 @@ const Contact: React.FC = () => {
                 >
                   <div className="*:text-oklch-primary-dark bg-oklch-white-pure shadow-lg rounded-2xl p-6  hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
 
-                    <p className="text-sm  opacity-90 mb-2">Average Response Time</p>
+                    <p className="text-sm text-oklch-neutral-600 opacity-90 mb-2">Average Response Time</p>
                     <p className="text-4xl font-black">24 Hours</p>
-                    <p className="text-sm opacity-75 mt-3 text-oklch-text-light-gray">We prioritize every inquiry</p>
+                    <p className="text-sm opacity-75 mt-3 text-oklch-neutral-500">We prioritize every inquiry</p>
                   </div>
                 </motion.div>
               </div>
@@ -254,14 +254,14 @@ const Contact: React.FC = () => {
                       animate={{ opacity: 1, scale: 1 }}
                     >
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-6 h-6 rounded-full bg-oklch-secondary-light flex items-center justify-center">
-                          <svg className="w-4 h-4 text-oklch-white-pure" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-6 h-6 rounded-full bg-oklch-success-base flex items-center justify-center">
+                          <svg className="w-4 h-4 text-oklch-pure-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <p className="font-bold text-green-700">Message Sent Successfully!</p>
+                        <p className="font-bold text-oklch-success-dark">Message Sent Successfully!</p>
                       </div>
-                      <p className="text-green-600 text-sm">Thanks for reaching out. We'll be in touch soon.</p>
+                      <p className="text-oklch-success-base text-sm">Thanks for reaching out. We'll be in touch soon.</p>
                     </motion.div>
                   )}
 
@@ -278,7 +278,7 @@ const Contact: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                       >
-                        <label className="block text-sm font-bold text-oklch-text-dark mb-3">Full Name *</label>
+                        <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Full Name *</label>
                         <Input
                           placeholder="John Doe"
                           value={form.name}
@@ -286,11 +286,11 @@ const Contact: React.FC = () => {
                           onBlur={(e) => handleBlur('name', e.target.value)}
                           className={cn(
                             'h-13 rounded-xl border-2  placeholder:text-oklch-text-gray transition-all',
-                            errors.name ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
+                            errors.name ? 'border-oklch-error-base bg-oklch-error-light' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
                         />
-                        {errors.name && <p className="text-red-500 text-xs mt-2 font-medium">Valid name required</p>}
+                        {errors.name && <p className="text-oklch-error-base text-xs mt-2 font-medium">Valid name required</p>}
                       </motion.div>
 
                       {/* Phone */}
@@ -300,7 +300,7 @@ const Contact: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.15 }}
                       >
-                        <label className="block text-sm font-bold text-oklch-text-dark mb-3">Phone Number *</label>
+                        <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Phone Number *</label>
                         <Input
                           type="tel"
                           placeholder="+91 XXXXX XXXXX"
@@ -309,11 +309,11 @@ const Contact: React.FC = () => {
                           onBlur={(e) => handleBlur('phone', e.target.value)}
                           className={cn(
                             'h-13 rounded-xl border-2  placeholder:text-oklch-text-gray transition-all',
-                            errors.phone ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
+                            errors.phone ? 'border-oklch-error-base bg-oklch-error-light' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
                         />
-                        {errors.phone && <p className="text-red-500 text-xs mt-2 font-medium">Valid phone required</p>}
+                        {errors.phone && <p className="text-oklch-error-base text-xs mt-2 font-medium">Valid phone required</p>}
                       </motion.div>
                     </div>
 
@@ -324,7 +324,7 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
                     >
-                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Email Address *</label>
+                      <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Email Address *</label>
                       <Input
                         type="email"
                         placeholder="you@company.com"
@@ -333,11 +333,11 @@ const Contact: React.FC = () => {
                         onBlur={(e) => handleBlur('email', e.target.value)}
                         className={cn(
                           'h-13 rounded-xl border-2 w-full  placeholder:text-oklch-text-gray transition-all',
-                          errors.email ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
+                          errors.email ? 'border-oklch-error-base bg-oklch-error-light' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
-                      {errors.email && <p className="text-red-500 text-xs mt-2 font-medium">Valid email required</p>}
+                      {errors.email && <p className="text-oklch-error-base text-xs mt-2 font-medium">Valid email required</p>}
                     </motion.div>
 
                     {/* Subject */}
@@ -347,7 +347,7 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.25 }}
                     >
-                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Subject *</label>
+                      <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Subject *</label>
                       <Input
                         placeholder="What is this about?"
                         value={form.subject}
@@ -355,11 +355,11 @@ const Contact: React.FC = () => {
                         onBlur={(e) => handleBlur('subject', e.target.value)}
                         className={cn(
                           'h-13 rounded-xl border-2 w-full  placeholder:text-oklch-text-gray transition-all',
-                          errors.subject ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
+                          errors.subject ? 'border-oklch-error-base bg-oklch-error-light' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
-                      {errors.subject && <p className="text-red-500 text-xs mt-2 font-medium">Subject required</p>}
+                      {errors.subject && <p className="text-oklch-error-base text-xs mt-2 font-medium">Subject required</p>}
                     </motion.div>
 
                     {/* Message */}
@@ -369,7 +369,7 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 }}
                     >
-                      <label className="block text-sm font-bold text-oklch-text-dark mb-3">Your Message *</label>
+                      <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Your Message *</label>
                       <Textarea
                         rows={6}
                         placeholder="Tell us about your inquiry, needs, or any questions you have..."
@@ -378,11 +378,11 @@ const Contact: React.FC = () => {
                         onBlur={(e) => handleBlur('message', e.target.value)}
                         className={cn(
                           'rounded-xl border-2 w-full  placeholder:text-oklch-text-gray resize-none transition-all',
-                          errors.message ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
+                          errors.message ? 'border-oklch-error-base bg-oklch-error-light' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
                       />
-                      {errors.message && <p className="text-red-500 text-xs mt-2 font-medium">Message must be at least 10 characters</p>}
+                      {errors.message && <p className="text-oklch-error-base text-xs mt-2 font-medium">Message must be at least 10 characters</p>}
                     </motion.div>
 
                     {/* Submit Button */}
@@ -426,8 +426,8 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark mb-4">Prefer a Different Channel?</h2>
-            <p className="text-oklch-text-gray mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-oklch-neutral-900 mb-4">Prefer a Different Channel?</h2>
+            <p className="text-oklch-neutral-600 mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50">Schedule a Call</Button>
               <Button className="rounded-xl h-12 px-8 border-oklch-white-pure bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>

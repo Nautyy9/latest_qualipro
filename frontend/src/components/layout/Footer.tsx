@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-oklch-secondary-light rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10  rounded-lg flex items-center justify-center">
                 <img src={logo} alt="qualipro" className="text-oklch-text-dark font-bold text-xl"></img>
               </div>
               <div className="flex flex-col">

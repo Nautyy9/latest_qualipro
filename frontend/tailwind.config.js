@@ -48,6 +48,29 @@ export default {
         "oklch-sky-base": "oklch(var(--color-sky-base)/ <alpha-value>)",
         "oklch-sky-dark": "oklch(var(--color-sky-dark)/ <alpha-value>)",
         "oklch-gray-inactive": "oklch(var(--color-gray-inactive)/ <alpha-value>)",
+        /* Error Colors */
+        "oklch-error-light": "oklch(var(--color-error-light)/ <alpha-value>)",
+        "oklch-error-base": "oklch(var(--color-error-base)/ <alpha-value>)",
+        "oklch-error-dark": "oklch(var(--color-error-dark)/ <alpha-value>)",
+        /* Success Colors */
+        "oklch-success-light": "oklch(var(--color-success-light)/ <alpha-value>)",
+        "oklch-success-base": "oklch(var(--color-success-base)/ <alpha-value>)",
+        "oklch-success-dark": "oklch(var(--color-success-dark)/ <alpha-value>)",
+        /* Warning Colors */
+        "oklch-warning-light": "oklch(var(--color-warning-light)/ <alpha-value>)",
+        "oklch-warning-base": "oklch(var(--color-warning-base)/ <alpha-value>)",
+        "oklch-warning-dark": "oklch(var(--color-warning-dark)/ <alpha-value>)",
+        /* Neutral Colors */
+        "oklch-neutral-50": "oklch(var(--color-neutral-50)/ <alpha-value>)",
+        "oklch-neutral-100": "oklch(var(--color-neutral-100)/ <alpha-value>)",
+        "oklch-neutral-200": "oklch(var(--color-neutral-200)/ <alpha-value>)",
+        "oklch-neutral-400": "oklch(var(--color-neutral-400)/ <alpha-value>)",
+        "oklch-neutral-500": "oklch(var(--color-neutral-500)/ <alpha-value>)",
+        "oklch-neutral-600": "oklch(var(--color-neutral-600)/ <alpha-value>)",
+        "oklch-neutral-700": "oklch(var(--color-neutral-700)/ <alpha-value>)",
+        "oklch-neutral-900": "oklch(var(--color-neutral-900)/ <alpha-value>)",
+        /* Pure White */
+        "oklch-pure-white": "oklch(var(--color-pure-white)/ <alpha-value>)",
       },
       backgroundColor : {
         'sgray' : '#f6f7f9',

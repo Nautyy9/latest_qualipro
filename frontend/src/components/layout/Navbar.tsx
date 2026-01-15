@@ -80,7 +80,10 @@ const Navbar: React.FC = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
-
+  function checkPath(name: string) {
+    if (window.location.pathname === '/' + name.toLocaleLowerCase() || (window.location.pathname === '/' && name === 'Home')) return true
+    else return false
+  }
   return (
     <>
 
@@ -91,7 +94,7 @@ const Navbar: React.FC = () => {
         className={` shrinking-header fixed top-8 mx-auto left-0 right-0 transition-transform duration-300 ease-in-out z-50 flex items-center w-[calc(100vw_-_40px)] sm:w-[calc(100vw_-_80px)] min-[1100px]:w-[calc(100vw_-_144px)] rounded-full border border-oklch-white-pure ${scrolled ? 'w-[calc(100dvw_-_12px)] fixed top-2 lg:px-0 xl:px-20 2xl:px-40' : ''}`}
       >
         <div className={`flex md:px-5 lg:px-10 2xl:px-20 w-full ${scrolled ? 'px-0' : 'px-2'}`}>
-          <div className={`${isOpen ? "hidden" : "flex"} justify-between items-center w-full rounded-full  py-3 sm:py-4 px-3 sm:px-5 xl:px-10 transition-all`} style={{ backgroundColor: scrolled ? 'oklch(0.98 0.003 0 / 0.5)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none' }}>
+          <div className={`${isOpen ? "hidden" : "flex"} justify-between items-center w-full rounded-full  py-3 sm:py-4 px-3 sm:px-5 xl:px-10 transition-all ${scrolled ? 'bg-oklch-white-pure/50 backdrop-blur-md' : 'bg-transparent backdrop-blur-none'}`} >
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-1 sm:space-x-3">
               <div className={`${scrolled ? 'w-10 h-10' : 'w-10 h-10'} rounded-lg flex items-center justify-center transition-all duration-600`}>
@@ -116,8 +119,8 @@ const Navbar: React.FC = () => {
                   </div>
                   {/* Curtains */}
                   <div className="pointer-events-none absolute inset-0 flex">
-                    <div className="w-1/2 h-full rounded-l-full backdrop-blur-md animate-slide-in-left" style={{ background: 'linear-gradient(to right, var(--color-white-pure), oklch(0.99 0.003 0 / 0.8))' }}></div>
-                    <div className="w-1/2 h-full rounded-r-full backdrop-blur-md animate-slide-in-right" style={{ background: 'linear-gradient(to left, var(--color-white-pure), oklch(0.99 0.003 0 / 0.8))' }}></div>
+                    <div className="w-1/2 h-full rounded-l-full backdrop-blur-md animate-slide-in-left bg-gradient-to-r from-oklch-white-pure/60 to-oklch-white-pure/40" ></div>
+                    <div className="w-1/2 h-full rounded-r-full backdrop-blur-md animate-slide-in-right  bg-gradient-to-l from-oklch-white-pure/60 to-oklch-white-pure/40" ></div>
                   </div>
                 </div>
               ) : (
@@ -127,31 +130,19 @@ const Navbar: React.FC = () => {
                   onMouseLeave={() => { setHoverOpen(false); }}
                 >
                   <button
-                    className="rounded-full h-12 w-12 transition animate-fade-in-slow hover:text-white hover:bg-oklch-primary-base"
+                    className="rounded-full h-12 w-12 transition animate-fade-in-slow hover:text-white hover:bg-oklch-primary-base group/btn"
                     aria-label="Open navigation"
 
                   >
-                    <div className="flex flex-col items-center justify-center gap-1.5">
-                      <span className="block h-[2px] w-7 bg-current group-hover:text-white rounded-full"></span>
-                      <span className="block group-hover:text-white h-[2px] w-5 bg-current rounded-full"></span>
+                    <div className="flex  flex-col items-center justify-center gap-1.5 ">
+                      <span className="block h-[2px] w-7 bg-current group-hover/btn:text-white transition-colors duration-300  rounded-full"></span>
+                      <span className="block group-hover/btn:text-white transition-colors duration-300  h-[2px] w-5 bg-current rounded-full"></span>
                     </div>
                   </button>
 
-                  {(hoverOpen || pinnedOpen) && (
-                    <div className={`absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[70vw] max-w-xl rounded-2xl backdrop-blur-md p-3 shadow-lg text-oklch-text-dark-alt`} style={{ backgroundColor: scrolled ? 'transparent' : 'oklch(0.98 0.003 0 / 0.3)' }}>
-                      <div className="flex items-center justify-evenly">
-                        {navLinks.map((l, idx) => (
-                          <div key={l.name} className="animate-drop-in" style={{ animationDelay: `${idx * 70}ms` }}>
-                            <Link to={l.path}>
-                              <span className="block w-full text-center rounded-xl px-3 py-2 transition-colors text-oklch-text-dark-alt hover:bg-white/50">{l.name}</span>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               )}
+
             </div>
 
             {/* Desktop Navigation (visible on lg+ only) */}
@@ -201,6 +192,27 @@ const Navbar: React.FC = () => {
             </Button>
           </div>
 
+
+          {/* md-lg absolute menu dropdown , its outside the div because of the backdrop overlay issue */}
+          {(hoverOpen || pinnedOpen) && (
+            <div className={`hidden md:block lg:hidden absolute left-1/2 -translate-x-1/2 top-full  mt-2 w-[70vw] max-w-xl rounded-2xl p-3 shadow-lg text-oklch-text-dark  bg-oklch-white-pure/50 backdrop-blur-md`}
+            >
+              <div className="flex items-center justify-evenly">
+                {navLinks.map((l, idx) => (
+                  <div key={l.name} className="animate-drop-in" style={{ animationDelay: `${idx * 70}ms` }}>
+                    <Link to={l.path}>
+                      <span className={`block w-full text-center rounded-xl px-3 py-2 transition-colors text-oklch-text-dark-alt hover:text-oklch-primary-medium active: ${checkPath(l.name) ? 'text-oklch-primary-dark ' : 'text-oklch-text-dark'}`}>{l.name}
+                        {
+                          checkPath(l.name) ? (
+                            <span className="absolute left-1/2 -translate-x-1/2 bottom-0 rounded-full h-0.5  bg-oklch-primary-medium w-5/6 "></span>
+                          ) : null}
+                      </span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           {/* Enhanced Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <div className="md:hidden">
@@ -237,7 +249,7 @@ const Navbar: React.FC = () => {
                   <div className="sticky top-0 z-10 flex items-center justify-between px-4 py-4 backdrop-blur-sm border-b border-oklch-border-primary bg-oklch-white-pure/90">
                     <div className="flex items-center gap-2 anim-left-in" style={{ animationDelay: '100ms' }}>
                       <img src={logo} alt="qualipro" className="h-8 w-8 object-contain" />
-                      <span className="text-xl font-serif font-semibold text-oklch-text-dark-alt">QualiPro</span>
+                      <span className="text-xl font-serif font-semibold text-oklch-neutral-900">QualiPro</span>
                     </div>
                     <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="rounded-full p-2 anim-right-in transition-colors text-oklch-primary-base hover:bg-oklch-primary-base hover:text-oklch-white-pure" style={{ animationDelay: '180ms' }}>
                       <X size={20} />
@@ -251,33 +263,33 @@ const Navbar: React.FC = () => {
                       <div className="animate-drop-in" style={{ animationDelay: '240ms' }}>
                         <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Home className="h-5 w-5 text-oklch-primary-bright" />
-                          <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Home</span>
+                          <span className="font-medium text-base font-serif text-oklch-neutral-900\">Home</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '310ms' }}>
                         <Link to="/services" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/services") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`}>
                           <Recycle className="h-5 w-5 text-oklch-primary-bright" />
-                          <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Services</span>
+                          <span className="font-medium text-base font-serif text-oklch-neutral-900">Services</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '380ms' }}>
                         <Link to="/about" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/about") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Briefcase className="h-5 w-5 text-oklch-primary-bright" />
-                          <span className="font-medium text-base font-serif text-oklch-text-dark-alt">About</span>
+                          <span className="font-medium text-base font-serif text-oklch-neutral-900">About</span>
                         </Link>
                       </div>
                       <div className="animate-drop-in" style={{ animationDelay: '450ms' }}>
                         <Link to="/contact" onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-colors border ${isActive("/contact") ? "border-oklch-primary-bright bg-oklch-bg-primary" : "border-transparent bg-oklch-white-pure"}`} >
                           <Phone className="h-5 w-5 text-oklch-primary-bright" />
-                          <span className="font-medium text-base font-serif text-oklch-text-dark-alt">Contact</span>
+                          <span className="font-medium text-base font-serif text-oklch-neutral-900">Contact</span>
                         </Link>
                       </div>
                     </nav>
 
                     {/* CTA and features */}
                     <div className="px-4 py-2">
-                      <div className="p-4 rounded-xl bg-white border border-sky-200/70 anim-right-in" style={{ animationDelay: '480ms' }}>
-                        <p className="text-sm text-[#202020] mb-3">Partner with us for quality healthcare solutions.</p>
+                      <div className="p-4 rounded-xl bg-oklch-white-pure border border-oklch-sky-base/30 anim-right-in" style={{ animationDelay: '480ms' }}>
+                        <p className="text-sm text-oklch-neutral-900 mb-3">Partner with us for quality healthcare solutions.</p>
                         <Link to="/contact" onClick={() => setIsOpen(false)} className="block">
                           <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-oklch-primary-base text-oklch-white-pure px-4 py-2 font-semibold hover:bg-oklch-primary-dark active:bg-oklch-primary-dark transition-colors" >Get Started</span>
                         </Link>
@@ -290,10 +302,10 @@ const Navbar: React.FC = () => {
                             <Check className="h-3 w-3 text-oklch-white-pure" />
                           </div>
                         </div>
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-sky-100  to-sky-50 border border-sky-300/70 shadow-sm flex items-center justify-between anim-right-in" style={{ animationDelay: '580ms' }}>
+                        <div className="p-3 rounded-lg bg-gradient-to-br from-oklch-sky-base/20  to-oklch-secondary-light/50 border border-oklch-sky-base/30 shadow-sm flex items-center justify-between anim-right-in" style={{ animationDelay: '580ms' }}>
                           <span className="font-semibold">Quality</span>
-                          <div className="bg-sky-700 rounded-full p-0.5">
-                            <Check className="h-3 w-3 text-white" />
+                          <div className="bg-oklch-sky-dark rounded-full p-0.5">
+                            <Check className="h-3 w-3 text-oklch-pure-white" />
                           </div>
                         </div>
                       </div>
@@ -301,21 +313,21 @@ const Navbar: React.FC = () => {
 
                     {/* Extra content to fill and avoid empty bottom */}
                     <div className="px-4 py-4 space-y-4 ">
-                      <div className=" bg-white  rounded-xl border border-sky-200/60  p-4 anim-up-in" style={{ animationDelay: '620ms' }}>
-                        <h4 className="text-sm font-semibold text-sky-900 mb-2">Contact us</h4>
-                        <div className="space-y-2 text-sm text-sky-950/80">
-                          <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-sky-700">
-                            <Phone className="h-4 w-4 text-sky-500" /> +91 98765 43210
+                      <div className="bg-oklch-white-pure rounded-xl border border-oklch-sky-base/30  p-4 anim-up-in" style={{ animationDelay: '620ms' }}>
+                        <h4 className="text-sm font-semibold text-oklch-neutral-900 mb-2">Contact us</h4>
+                        <div className="space-y-2 text-sm text-oklch-neutral-700">
+                          <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-oklch-primary-base">
+                            <Phone className="h-4 w-4 text-oklch-primary-base" /> +91 98765 43210
                           </a>
-                          <a href="mailto:info@qualipro.healthcare" className="flex items-center gap-2 hover:text-sky-700">
-                            <Mail className="h-4 w-4 text-sky-500" /> info@qualipro.healthcare
+                          <a href="mailto:info@qualipro.healthcare" className="flex items-center gap-2 hover:text-oklch-primary-base">
+                            <Mail className="h-4 w-4 text-oklch-primary-base" /> info@qualipro.healthcare
                           </a>
                         </div>
                       </div>
 
 
 
-                      <div className="pb-24 text-center text-xs text-sky-950/60 anim-up-in" style={{ animationDelay: '660ms' }}>© {new Date().getFullYear()} QualiPro Healthcare. All rights reserved.</div>
+                      <div className="pb-24 text-center text-xs text-oklch-neutral-600 anim-up-in" style={{ animationDelay: '660ms' }}>© {new Date().getFullYear()} QualiPro Healthcare. All rights reserved.</div>
                     </div>
                   </div>
                 </div>

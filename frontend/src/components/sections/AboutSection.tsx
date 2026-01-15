@@ -34,9 +34,9 @@ const AboutSection: React.FC = () => {
                     centered={false}
                     className="bg-oklch-secondary-light/50 rounded-lg"
                   />
-                  <h3 className="text-xl font-semibold text-raisin-900">Our Mission</h3>
+                  <h3 className="text-xl font-semibold text-oklch-neutral-900">Our Mission</h3>
                 </div>
-                <p className="text-raisin-600 text-base">
+                <p className="text-oklch-neutral-600 text-base">
                   To elevate healthcare standards through comprehensive quality solutions and certification support.
                 </p>
               </motion.div>
@@ -51,9 +51,9 @@ const AboutSection: React.FC = () => {
                     centered={false}
                     className="bg-oklch-secondary-light/50 rounded-lg"
                   />
-                  <h3 className="text-xl font-semibold text-raisin-900">Our Vision</h3>
+                  <h3 className="text-xl font-semibold text-oklch-neutral-900">Our Vision</h3>
                 </div>
-                <p className="text-raisin-600 text-base">
+                <p className="text-oklch-neutral-600 text-base">
                   To be the preferred partner for healthcare organizations seeking excellence and certification.
                 </p>
               </motion.div>
@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
 
             {/* Key Features */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-raisin-900">Why Healthcare Organizations Trust Us</h3>
+              <h3 className="text-xl font-semibold text-oklch-neutral-900">Why Healthcare Organizations Trust Us</h3>
               <div className="space-y-3">
                 {[
                   'Expert team with 10+ years of healthcare quality experience',
@@ -104,25 +104,25 @@ const AboutSection: React.FC = () => {
                       <div className="bg-oklch-primary-base h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000"></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-green-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
-                    <div className="text-2xl font-bold text-green-600 group-hover/stat:animate-pulse">24/7</div>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-oklch-success-light hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                    <div className="text-2xl font-bold text-oklch-success-base group-hover/stat:animate-pulse">24/7</div>
                     <div className="text-xs text-oklch-text-dark">Support Available</div>
-                    <div className="w-full bg-green-100 h-1 rounded-full mt-2">
-                      <div className="bg-green-500 h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000" style={{ backgroundColor: 'oklch(0.52 0.15 142)' }}></div>
+                    <div className="w-full bg-oklch-success-light h-1 rounded-full mt-2">
+                      <div className="bg-oklch-success-base h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000"></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-purple-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
-                    <div className="text-2xl font-bold text-purple-600 group-hover/stat:animate-pulse">100%</div>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-oklch-purple-light hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                    <div className="text-2xl font-bold text-oklch-primary-darker group-hover/stat:animate-pulse">100%</div>
                     <div className="text-xs text-oklch-text-dark">Compliance Rate</div>
-                    <div className="w-full bg-purple-100 h-1 rounded-full mt-2">
-                      <div className="bg-purple-500 h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000" style={{ backgroundColor: 'oklch(0.58 0.16 290)' }}></div>
+                    <div className="w-full bg-oklch-purple-light h-1 rounded-full mt-2">
+                      <div className="bg-oklch-primary-darker h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000"></div>
                     </div>
                   </motion.div>
-                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-indigo-100 hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
-                    <div className="text-2xl font-bold text-indigo-600 group-hover/stat:animate-pulse">50+</div>
+                  <motion.div className="bg-oklch-white-pure rounded-lg p-4 text-center shadow-sm border border-oklch-primary-bright hover:shadow-lg hover:scale-105 transition-all duration-300 group/stat cursor-pointer" variants={fadeInUp}>
+                    <div className="text-2xl font-bold text-oklch-primary-base group-hover/stat:animate-pulse">50+</div>
                     <div className="text-xs text-oklch-text-dark">Expert Consultants</div>
-                    <div className="w-full bg-indigo-100 h-1 rounded-full mt-2">
-                      <div className="bg-indigo-500 h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000" style={{ backgroundColor: 'oklch(0.55 0.13 280)' }}></div>
+                    <div className="w-full bg-oklch-secondary-light h-1 rounded-full mt-2">
+                      <div className="bg-oklch-primary-base h-1 rounded-full w-0 group-hover/stat:w-full transition-all duration-1000"></div>
                     </div>
                   </motion.div>
                 </motion.div>

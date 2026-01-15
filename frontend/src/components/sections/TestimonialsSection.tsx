@@ -62,7 +62,7 @@ const TestimonialsSection: React.FC = () => {
         <div className="text-center space-y-4 mb-16">
           <span className="inline-block  mb-2 mx-auto rounded-full border border-oklch-sky-base bg-oklch-white-pure  px-4 py-1 text-sm text-oklch-sky-dark shadow-lg shadow-oklch-secondary-lighter/50">Testimonials •</span>
           <h2 className="text-3xl md:text-4xl font-bold text-oklch-text-dark">
-            What Our <span className="text-accent-600">Clients Say</span>
+            What Our <span className="text-oklch-accent-bright">Clients Say</span>
           </h2>
           <p className="text-xl text-oklch-text-gray max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what healthcare leaders across India
@@ -134,7 +134,7 @@ const TestimonialsSection: React.FC = () => {
 
                   {/* Title - positioned at bottom */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <h3 className="text-xl md:text-2xl font-bold text-white text-center">
+                    <h3 className="text-xl md:text-2xl font-bold text-oklch-pure-white text-center">
                       {testimonial.name}
                     </h3>
                   </div>
@@ -178,7 +178,7 @@ const TestimonialsSection: React.FC = () => {
                   <div className="flex items-start space-x-4">
                     <AnimatedIcon
                       icon={
-                        <span className="text-oklch-white-pure font-bold text-sm">
+                        <span className="text-oklch-pure-white font-bold text-sm">
                           {testimonial.name.split(' ').map(n => n[0]).join('')}
                         </span>
                       }
@@ -190,7 +190,7 @@ const TestimonialsSection: React.FC = () => {
                     <div className="flex-1">
                       <div className="font-semibold text-oklch-text-dark">{testimonial.name}</div>
                       <div className="text-sm text-oklch-text-gray">{testimonial.position}</div>
-                      <div className="text-sm text-accent-600 font-medium">{testimonial.organization}</div>
+                      <div className="text-sm text-oklch-accent-bright font-medium">{testimonial.organization}</div>
                       <div className="text-xs text-oklch-text-gray mt-1">{testimonial.location}</div>
                     </div>
                   </div>

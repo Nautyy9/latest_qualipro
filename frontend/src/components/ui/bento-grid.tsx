@@ -34,6 +34,7 @@ const BentoCard = ({
   cta,
   img,
   img2,
+
   stats,
   features
 }: {
@@ -46,6 +47,7 @@ const BentoCard = ({
   cta: string;
   img?: string;
   img2?: string;
+
   stats?: Array<{ value: string; label: string }>;
   features?: Array<{ icon: any; title: string; description: string }>;
 }) => (
@@ -59,18 +61,19 @@ const BentoCard = ({
   >
     <div>{background}</div>
 
-    {/* Image Background - Only shown if img exists */}
+    {/* Image Background - Shown on all sizes */}
     {img && (
-      <div className=" hidden lg:block z-10  group-hover:opacity-20 transition-opacity duration-300">
+      <div className="z-10 group-hover:opacity-20 transition-opacity duration-300">
         <img src={img} alt={name} className="w-full h-72 m-auto object-fill" />
       </div>
     )}
     {img2 && (
-      <div className="z-10 hidden lg:block group-hover:opacity-20 transition-opacity duration-300">
-        <img src={img2} alt={name} className="w-full h-72 m-auto object-fill" />
+      <div className="flex lg:hidden z-10 group-hover:opacity-20 transition-opacity duration-300">
+        <img src={img2} alt={name} className=" w-full h-72 m-auto object-fill" />
       </div>
     )
     }
+
 
     {/* Top Image for tall cards */}
 
@@ -81,36 +84,36 @@ const BentoCard = ({
         triggerOnScroll={true}
         size="md"
         centered={false}
-        className="bg-blue-200/50 rounded-lg flex-shrink-0"
+        className="bg-oklch-secondary-light/50 rounded-lg flex-shrink-0"
       />
       <h3 className="text-xl font-semibold" style={{ color: '#202020' }}>
         {name}
       </h3>
       <p className="max-w-lg leading-relaxed text-sm" style={{ color: '#202020' }}>{description}</p>
 
-      {/* Stats Section */}
+      {/* Stats Section - Only shown on lg+ */}
       {stats && stats.length > 0 && (
-        <div className="grid grid-cols-2 gap-3 mt-2">
+        <div className="hidden lg:grid grid-cols-2 gap-3 mt-2">
           {stats.map((stat, idx) => (
-            <div key={idx} className="bg-blue-50/50 rounded-lg p-3 text-center">
+            <div key={idx} className="bg-oklch-bg-light-blue/50 rounded-lg p-3 text-center">
               <div className="text-lg font-bold text-blue-600">{stat.value}</div>
-              <div className="text-xs text-gray-600">{stat.label}</div>
+              <div className="text-xs text-oklch-neutral-600">{stat.label}</div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Features Section */}
+      {/* Features Section - Only shown on lg+ */}
       {features && features.length > 0 && (
-        <div className="space-y-2 mt-2">
+        <div className="hidden lg:space-y-2 space-y-2 lg:mt-2">
           {features.map((feature, idx) => (
             <div key={idx} className="flex items-start gap-2">
-              <div className="mt-1 p-1.5 bg-blue-100/50 rounded">
+              <div className="mt-1 p-1.5 bg-oklch-secondary-light/50 rounded">
                 <feature.icon className="h-4 w-4 text-blue-600" strokeWidth={2} />
               </div>
               <div>
-                <div className="font-semibold text-sm text-gray-800">{feature.title}</div>
-                <div className="text-xs text-gray-600">{feature.description}</div>
+                <div className="font-semibold text-sm text-oklch-neutral-800">{feature.title}</div>
+                <div className="text-xs text-oklch-neutral-600">{feature.description}</div>
               </div>
             </div>
           ))}
@@ -123,14 +126,14 @@ const BentoCard = ({
         "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center pl-0 py-4 pr-4  opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto text-blue-600 hover:bg-blue-100 transition-all duration-300 group/btn hover:scale-110">
+      <Button variant="ghost" asChild size="sm" className="pointer-events-auto text-blue-600 hover:bg-oklch-secondary-light/50 transition-all duration-300 group/btn hover:scale-110">
         <a href={href}>
           {cta}
           <ArrowRightIcon className=" h-4 w-4 group-hover/btn:translate-x-2 group-hover/btn:scale-125 group-hover/btn:-rotate-45 transition-all duration-500" />
         </a>
       </Button>
     </div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-blue-50/30" />
+    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-oklch-bg-light-blue/30" />
   </div>
 );
 
