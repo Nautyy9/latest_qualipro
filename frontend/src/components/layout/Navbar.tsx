@@ -279,15 +279,15 @@ const Navbar: React.FC = () => {
                       <div className="p-4 rounded-xl bg-white border border-sky-200/70 anim-right-in" style={{ animationDelay: '480ms' }}>
                         <p className="text-sm text-[#202020] mb-3">Partner with us for quality healthcare solutions.</p>
                         <Link to="/contact" onClick={() => setIsOpen(false)} className="block">
-                          <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-500 text-white px-4 py-2 font-semibold hover:bg-blue-700 active:bg-blue-700 transition-colors" >Get Started</span>
+                          <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-oklch-primary-base text-oklch-white-pure px-4 py-2 font-semibold hover:bg-oklch-primary-dark active:bg-oklch-primary-dark transition-colors" >Get Started</span>
                         </Link>
                       </div>
 
                       <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-sky-950/70">
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-green-100 via-green-50 to-white border border-green-300/70 shadow-sm flex items-center justify-between anim-left-in" style={{ animationDelay: '540ms' }}>
+                        <div className="p-3 rounded-lg bg-gradient-to-br from-oklch-secondary-light via-oklch-secondary-lighter to-oklch-white-pure border border-oklch-secondary-lighter shadow-sm flex items-center justify-between anim-left-in" style={{ animationDelay: '540ms' }}>
                           <span className="font-semibold">Reliable</span>
-                          <div className="bg-green-700 rounded-full p-0.5">
-                            <Check className="h-3 w-3 text-white" />
+                          <div className="bg-oklch-secondary-light rounded-full p-0.5">
+                            <Check className="h-3 w-3 text-oklch-white-pure" />
                           </div>
                         </div>
                         <div className="p-3 rounded-lg bg-gradient-to-br from-sky-100  to-sky-50 border border-sky-300/70 shadow-sm flex items-center justify-between anim-right-in" style={{ animationDelay: '580ms' }}>

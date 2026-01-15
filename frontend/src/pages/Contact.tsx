@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <motion.div className="min-h-screen bg-gradient-to-b from-oklch-white-pure via-oklch-secondary-lighter/30 to-oklch-white-pure" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
+    <motion.div className="min-h-screen bg-gradient-to-b from-oklch-white-pure via-oklch-sky-base/5 to-oklch-white-pure" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: 'easeOut' }}>
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-0 -left-32 w-96 h-96 bg-oklch-secondary-lighter/20 rounded-full blur-3xl animate-pulse" />
@@ -119,7 +119,7 @@ const Contact: React.FC = () => {
             animate="visible"
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
-            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base bg-oklch-sky-base/20 px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Get in Touch</span>
+            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Get in Touch</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-oklch-primary-dark">Contact Us</h1>
             <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
               We're here to help. Reach out to us for any questions or inquiries about our services.
@@ -159,12 +159,12 @@ const Contact: React.FC = () => {
                     >
                       <div className="relative overflow-hidden rounded-2xl bg-oklch-white-pure border border-oklch-secondary-light/50 p-6 hover:border-oklch-secondary-light transition-all duration-300 cursor-pointer">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-oklch-primary-base/5 to-oklch-sky-base/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-oklch-primary-base/[0.01] to-oklch-sky-base/[0.01]  group-hover:opacity-100 transition-opacity duration-300" />
 
                         <div className="relative z-10">
                           <div className="flex items-center gap-4 mb-4">
                             <motion.div
-                              className="w-12 h-12 rounded-xl bg-gradient-to-br from-oklch-primary-base to-oklch-primary-dark flex items-center justify-center flex-shrink-0"
+                              className="w-12 h-12 rounded-xl bg-oklch-primary-base  flex items-center justify-center flex-shrink-0"
                               whileHover={{ scale: 1.1, rotate: 5 }}
                             >
                               <Icon className="w-6 h-6 text-oklch-white-pure" />
@@ -185,15 +185,18 @@ const Contact: React.FC = () => {
 
                 {/* Fun fact/stat card */}
                 <motion.div
-                  className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-oklch-primary-base to-oklch-sky-base *:text-oklch-white-pure"
+                  className="mt-8 p-4 rounded-2xl  bg-gradient-to-tr from-oklch-primary-base/5 to-oklch-sky-base/5  "
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <p className="text-sm  opacity-90 mb-2">Average Response Time</p>
-                  <p className="text-4xl font-black">24 Hours</p>
-                  <p className="text-sm opacity-75 mt-3">We prioritize every inquiry</p>
+                  <div className="*:text-oklch-primary-dark bg-oklch-white-pure shadow-lg rounded-2xl p-6  hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+
+                    <p className="text-sm  opacity-90 mb-2">Average Response Time</p>
+                    <p className="text-4xl font-black">24 Hours</p>
+                    <p className="text-sm opacity-75 mt-3 text-oklch-text-light-gray">We prioritize every inquiry</p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -217,7 +220,7 @@ const Contact: React.FC = () => {
                   animate={{ opacity: 1 }}
                 >
                   <div
-                    className="absolute w-96 h-96 bg-gradient-to-r from-oklch-primary-base/10 to-oklch-sky-base/10 rounded-full blur-3xl pointer-events-none"
+                    className="absolute w-96 h-96 bg-gradient-to-r from-oklch-primary-base/5 to-oklch-sky-base/5 rounded-full blur-3xl pointer-events-none"
                     style={{
                       left: `${mousePosition.x}px`,
                       top: `${mousePosition.y}px`,
@@ -246,13 +249,13 @@ const Contact: React.FC = () => {
                   {/* Success State */}
                   {submitted && (
                     <motion.div
-                      className="mb-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 rounded-2xl"
+                      className="mb-8 p-6 bg-gradient-to-r from-oklch-secondary-light to-oklch-secondary-lighter border border-oklch-secondary-lighter rounded-2xl"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                     >
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-6 h-6 rounded-full bg-oklch-secondary-light flex items-center justify-center">
+                          <svg className="w-4 h-4 text-oklch-white-pure" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
@@ -282,7 +285,7 @@ const Contact: React.FC = () => {
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           onBlur={(e) => handleBlur('name', e.target.value)}
                           className={cn(
-                            'h-13 rounded-xl border-2 bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                            'h-13 rounded-xl border-2  placeholder:text-oklch-text-gray transition-all',
                             errors.name ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
@@ -305,7 +308,7 @@ const Contact: React.FC = () => {
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
                           onBlur={(e) => handleBlur('phone', e.target.value)}
                           className={cn(
-                            'h-13 rounded-xl border-2 bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                            'h-13 rounded-xl border-2  placeholder:text-oklch-text-gray transition-all',
                             errors.phone ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                           )}
                           required
@@ -329,7 +332,7 @@ const Contact: React.FC = () => {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onBlur={(e) => handleBlur('email', e.target.value)}
                         className={cn(
-                          'h-13 rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                          'h-13 rounded-xl border-2 w-full  placeholder:text-oklch-text-gray transition-all',
                           errors.email ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
@@ -351,7 +354,7 @@ const Contact: React.FC = () => {
                         onChange={(e) => setForm({ ...form, subject: e.target.value })}
                         onBlur={(e) => handleBlur('subject', e.target.value)}
                         className={cn(
-                          'h-13 rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray transition-all',
+                          'h-13 rounded-xl border-2 w-full  placeholder:text-oklch-text-gray transition-all',
                           errors.subject ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
@@ -374,7 +377,7 @@ const Contact: React.FC = () => {
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         onBlur={(e) => handleBlur('message', e.target.value)}
                         className={cn(
-                          'rounded-xl border-2 w-full bg-oklch-secondary-light/50 placeholder:text-oklch-text-gray resize-none transition-all',
+                          'rounded-xl border-2 w-full  placeholder:text-oklch-text-gray resize-none transition-all',
                           errors.message ? 'border-red-400 bg-red-50' : 'border-oklch-secondary-light focus:border-oklch-primary-base focus:bg-oklch-white-pure'
                         )}
                         required
@@ -393,7 +396,7 @@ const Contact: React.FC = () => {
                       <Button
                         type="submit"
                         disabled={submitted}
-                        className="w-full md:w-auto h-13 px-8 rounded-xl font-bold text-base *:text-white bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 shadow-lg hover:shadow-xl transition-all group"
+                        className="w-full md:w-auto h-13 px-8 rounded-xl font-bold text-base *:text-white border-transparent bg-oklch-primary-base hover:from-oklch-primary-dark hover:to-sky-700 shadow-lg hover:shadow-xl transition-all group"
                       >
                         <span className="flex items-center gap-2">
                           {submitted ? 'Sending...' : 'Send Message'}
@@ -427,7 +430,7 @@ const Contact: React.FC = () => {
             <p className="text-oklch-text-gray mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50">Schedule a Call</Button>
-              <Button className="rounded-xl h-12 px-8 border-2 border-oklch-primary-dark bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Button className="rounded-xl h-12 px-8 border-oklch-white-pure bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>
             </div>
           </motion.div>
         </div>

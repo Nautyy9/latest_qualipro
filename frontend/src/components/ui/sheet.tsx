@@ -35,7 +35,7 @@ export const SheetContent = React.forwardRef<
     <Dialog.Content
       ref={ref}
       className={cn(
-        "fixed z-50 bg-white shadow-2xl will-change-transform transition-transform",
+        "fixed z-50 bg-oklch-white-pure shadow-2xl will-change-transform transition-transform",
         side === "right" && "inset-y-0 right-0 w-[88vw] max-w-sm data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full duration-[380ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]",
         side === "left" && "inset-y-0 left-0 w-[88vw] max-w-sm data-[state=open]:translate-x-0 data-[state=closed]:-translate-x-full duration-300 ease-out",
         side === "top" && "inset-x-0 top-0 h-[40vh] data-[state=open]:translate-y-0 data-[state=closed]:-translate-y-full duration-300 ease-out",

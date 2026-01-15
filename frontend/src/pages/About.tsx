@@ -56,7 +56,7 @@ const About: React.FC = () => {
           <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <motion.div variants={sectionVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, ease: 'easeOut' }}>
-            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base bg-oklch-sky-base/20 px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Our Story</span>
+            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Our Story</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-oklch-primary-dark">About QualiPro</h1>
             <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
               Healthcare quality, simplified. We partner end-to-end to help you meet standards with confidence.

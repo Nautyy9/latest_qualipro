@@ -101,7 +101,7 @@ const Services: React.FC = () => {
           <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <motion.div variants={sectionVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, ease: 'easeOut' }}>
-            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base bg-oklch-sky-base/20 px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">What We Do</span>
+            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base  px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">What We Do</span>
             <h1 className="text-4xl text-oklch-primary-dark md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">Our Services</h1>
             <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
               Comprehensive healthcare solutions for certification, quality and digital transformation.
@@ -230,7 +230,7 @@ const Services: React.FC = () => {
                 {/* Divider */}
                 {index < services.length - 1 && (
                   <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent mt-8"
+                    className="h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent mt-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -290,7 +290,7 @@ const Services: React.FC = () => {
                           {service.pills?.map((pill, pillIndex) => (
                             <motion.div
                               key={pillIndex}
-                              className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold border-4 border-white shadow-[0_8px_24px_rgba(59,130,246,0.4)]`}
+                              className={`absolute ${pill.position} backdrop-blur-md bg-gradient-to-r from-oklch-primary-base to-oklch-primary-dark text-oklch-white-pure px-4 py-2 rounded-full text-sm font-semibold border-4 border-oklch-white-pure shadow-[0_8px_24px_rgba(var(--oklch-primary-base-rgb),0.4)]`}
                               variants={pill.animation}
                               animate="animate"
                             >
@@ -341,7 +341,7 @@ const Services: React.FC = () => {
                   {/* Divider */}
                   {index < services.length - 1 && (
                     <motion.div
-                      className="h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent"
+                      className="h-px bg-gradient-to-r from-transparent via-oklch-secondary-lighter/50 to-transparent"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}

@@ -23,7 +23,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-white font-sans relative"
+      className="w-full bg-oklch-white-pure font-sans relative"
       ref={containerRef}
     >
       {/* Full-height SVG container with continuous lines */}
@@ -68,7 +68,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             {/* Step node - positioned on the line using inline style */}
             <div 
-              className="absolute top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-blue-200 backdrop-blur-xl flex items-center justify-center text-white text-lg font-bold shadow-lg z-20 border-2 border-blue-500"
+              className="absolute top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-oklch-secondary-light backdrop-blur-xl flex items-center justify-center text-oklch-white-pure text-lg font-bold shadow-lg z-20 border-2 border-blue-500"
               style={{ left: 'calc(-4rem + 2px)' }}
             >
               <span className="js-check inline-block origin-center text-blue-600 font-bold">
@@ -77,7 +77,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             {/* Card */}
-            <div className="border border-blue-200/50 shadow-xl rounded-xl overflow-hidden bg-white">
+            <div className="border border-oklch-secondary-lighter/50 shadow-xl rounded-xl overflow-hidden bg-oklch-white-pure">
               {/* Image above */}
               <img
                 src={item.image}

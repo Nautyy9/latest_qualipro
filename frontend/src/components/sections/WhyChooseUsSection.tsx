@@ -211,7 +211,7 @@ const WhyChooseUsSection: React.FC = () => {
                     <motion.p className="text-sm leading-relaxed group-hover:text-oklch-text-gray transition-colors duration-300 text-oklch-text-dark" variants={textReveal}>{reason.description}</motion.p>
                     <motion.div className="text-oklch-primary-dark font-semibold text-sm" variants={textReveal}>{reason.stats}</motion.div>
                     <div className="w-full bg-oklch-secondary-lighter/50 rounded-full h-1 mt-3 overflow-hidden">
-                      <div className="bg-gradient-to-r from-oklch-primary-base to-green-500 h-1 rounded-full w-0 group-hover:w-full transition-all duration-1500 ease-out"></div>
+                      <div className="bg-gradient-to-r from-oklch-primary-base to-oklch-secondary-light h-1 rounded-full w-0 group-hover:w-full transition-all duration-1500 ease-out"></div>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="inline-block bg-oklch-secondary-light text-oklch-primary-dark text-xs px-2 py-1 rounded-full">
