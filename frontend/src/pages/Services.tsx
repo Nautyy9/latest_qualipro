@@ -136,7 +136,7 @@ const Services: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   className=" *:font-serif"
                 >
-                  <span className="text-xs font-bold text-oklch-primary-dark uppercase tracking-widest">Service {" "} </span>
+                  <span className="text-xs font-bold text-oklch-primary-dark  uppercase tracking-widest">Service {" "} </span>
                   <span className="text-3xl font-black text-oklch-primary-dark">{index + 1}</span>
                 </motion.div>
 

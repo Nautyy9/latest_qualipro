@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { staggerContainer, textReveal, fadeInUp, scaleIn } from '../../utils/motion';
+import { staggerContainer, textReveal, fadeInUp } from '../../utils/motion';
 import { Card, CardContent } from "../ui/card";
 import MotionCard from "../ui/motion-card";
 import { Clock, Shield, Users, Trophy, CheckCircle, Star } from 'lucide-react';

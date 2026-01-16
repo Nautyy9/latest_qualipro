@@ -36,6 +36,21 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
       }, animationDuration * 1000);
     };
 
+    // Extract motion-compatible props and standard button props separately
+    // Filter out HTML event handlers that conflict with motion.button event handlers
+    const { 
+      disabled, 
+      onDrag, 
+      onDragStart, 
+      onDragEnd, 
+      onDragCapture,
+      onAnimationStart,
+      onAnimationEnd,
+      onAnimationIteration,
+      onTransitionEnd,
+      ...htmlProps 
+    } = props;
+
     return (
       <motion.button
         ref={ref}
@@ -44,8 +59,8 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
         transition={{ duration: animationDuration * 0.5 }}
         whileHover={!isAnimating ? { y: -2 } : {}}
         onClick={handleClick}
-        disabled={isAnimating || props.disabled}
-        {...props}
+        disabled={isAnimating || disabled}
+        {...htmlProps}
       >
         {children}
       </motion.button>

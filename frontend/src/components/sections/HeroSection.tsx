@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Award, Shield, Users } from 'lucide-react';
-import AnimatedButton from '../ui/animated-button';
 import AnimatedIcon from '../ui/animated-icon';
 // logo image imported in Navbar; not used here
 
@@ -44,7 +43,7 @@ const HeroSection: React.FC = () => {
                 <Link
                   to="/services"
                   className="text-oklch-white-pure px-8 py-4 rounded-full font-bold shadow-xl flex items-center justify-center gap-2 bg-oklch-primary-dark hover:bg-oklch-primary-darker group/btn transition-all duration-300"
-                  onClick={(e) => {
+                  onClick={() => {
                     // Prevent default only if we want to handle it with animation
                     // For now, let the link work normally
                   }}

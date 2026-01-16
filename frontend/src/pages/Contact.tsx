@@ -429,8 +429,8 @@ const Contact: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-oklch-neutral-900 mb-4">Prefer a Different Channel?</h2>
             <p className="text-oklch-neutral-600 mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50">Schedule a Call</Button>
-              <Button className="rounded-xl h-12 px-8 border-oklch-white-pure bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark">Explore Services <ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50 hover:shadow-xl transition-shadow duration-300">Schedule a Call</Button>
+              <Button className="rounded-xl h-12 px-8 border-oklch-white-pure bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark group/btn hover:shadow-xl transition-shadow duration-300">Explore Services <ArrowRight className="group-hover/btn:translate-x-2  transition-all  duration-300 group-hover/btn:-rotate-45 group-hover/btn:scale-125 w-5 h-5 ml-2" /></Button>
             </div>
           </motion.div>
         </div>

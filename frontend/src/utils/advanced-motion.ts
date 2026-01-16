@@ -479,6 +479,9 @@ export const starItem: Variants = {
 
 // Counter animation with bounce
 export const counterBounce: Variants = {
+  initial: {
+    y: 0,
+  },
   animate: {
     y: [0, -5, 0],
     transition: {

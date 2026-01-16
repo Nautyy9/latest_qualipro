@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { staggerContainer, textReveal } from '../../utils/motion';
-import { Award, Stethoscope, Smartphone, BookOpen, Users, CheckCircle, Target, Zap, BarChart3 } from 'lucide-react';
+import { Award, Stethoscope, Smartphone, BookOpen, Users, Target, Zap, BarChart3 } from 'lucide-react';
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
 
 const ServicesSection: React.FC = () => {

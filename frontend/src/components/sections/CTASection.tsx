@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail, Shield, Award, CheckCircle, Star, Users, Clock } from 'lucide-react';
-import AnimatedButton from '../ui/animated-button';
 import AnimatedIcon from '../ui/animated-icon';
 
 const CTASection: React.FC = () => {
@@ -243,10 +242,10 @@ const CTASection: React.FC = () => {
           </p>
           <Link
             to="/services"
-            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-pure-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl inline-flex items-center gap-2 transition-all duration-300"
+            className="bg-oklch-primary-base hover:bg-oklch-primary-dark text-oklch-pure-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-flex items-center gap-2 transition-all duration-300 group/btn"
           >
             Explore Our Services
-            <ArrowRight size={20} />
+            <ArrowRight size={20} className='group-hover/btn:translate-x-2  transition-all  duration-300 group-hover/btn:-rotate-45 group-hover/btn:scale-125' />
           </Link>
         </div>
 

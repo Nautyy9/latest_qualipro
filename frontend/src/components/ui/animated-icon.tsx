@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  iconPulseClick, 
-  iconShakeClick, 
-  iconSpinClick, 
-  iconFlipClick,
   explosionParticle,
   iconAppearRotate 
 } from '../../utils/advanced-motion';
@@ -24,7 +20,6 @@ interface AnimatedIconProps {
 const AnimatedIcon = React.forwardRef<HTMLDivElement, AnimatedIconProps>(
   ({ 
     icon, 
-    animationType = 'pulse', 
     size = 'md', 
     className = '', 
     onClick,
@@ -40,13 +35,6 @@ const AnimatedIcon = React.forwardRef<HTMLDivElement, AnimatedIconProps>(
       sm: 'w-8 h-8',
       md: 'w-12 h-12',
       lg: 'w-16 h-16',
-    };
-
-    const animationVariants = {
-      pulse: iconPulseClick,
-      shake: iconShakeClick,
-      spin: iconSpinClick,
-      flip: iconFlipClick,
     };
 
     const handleClick = () => {

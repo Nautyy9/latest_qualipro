@@ -76,10 +76,10 @@ const AnimatedCounter = React.forwardRef<HTMLDivElement, AnimatedCounterProps>(
         ref={ref}
         className={`inline-block ${className}`}
         variants={counterBounce}
+        initial="initial"
         animate={hasAnimated ? 'animate' : 'initial'}
         onViewportEnter={() => animateOnScroll && setHasAnimated(true)}
         viewport={{ once: true, amount: 0.5 }}
-        whileInView={{ animate: 'animate' }}
       >
         {displayValue}
       </motion.div>
