@@ -296,13 +296,13 @@ const Navbar: React.FC = () => {
                       </div>
 
                       <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-sky-950/70">
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-oklch-secondary-light via-oklch-secondary-lighter to-oklch-white-pure border border-oklch-secondary-lighter shadow-sm flex items-center justify-between anim-left-in" style={{ animationDelay: '540ms' }}>
+                        <div className="p-3 rounded-lg bg bg-gradient-to-br from-oklch-bg-primary to-oklch-pure-white border border-oklch-primary-bright shadow-sm flex items-center justify-between anim-left-in" style={{ animationDelay: '540ms' }}>
                           <span className="font-semibold">Reliable</span>
-                          <div className="bg-oklch-secondary-light rounded-full p-0.5">
+                          <div className="bg-oklch-primary-base rounded-full p-0.5">
                             <Check className="h-3 w-3 text-oklch-white-pure" />
                           </div>
                         </div>
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-oklch-sky-base/20  to-oklch-secondary-light/50 border border-oklch-sky-base/30 shadow-sm flex items-center justify-between anim-right-in" style={{ animationDelay: '580ms' }}>
+                        <div className="p-3 rounded-lg bg bg-gradient-to-br from-oklch-bg-primary to-oklch-pure-white border border-oklch-primary-bright shadow-sm flex items-center justify-between anim-right-in" style={{ animationDelay: '580ms' }}>
                           <span className="font-semibold">Quality</span>
                           <div className="bg-oklch-sky-dark rounded-full p-0.5">
                             <Check className="h-3 w-3 text-oklch-pure-white" />
@@ -313,7 +313,7 @@ const Navbar: React.FC = () => {
 
                     {/* Extra content to fill and avoid empty bottom */}
                     <div className="px-4 py-4 space-y-4 ">
-                      <div className="bg-oklch-white-pure rounded-xl border border-oklch-sky-base/30  p-4 anim-up-in" style={{ animationDelay: '620ms' }}>
+                      <div className="bg bg-oklch-bg-primary/30 border border-oklch-primary-bright rounded-xl p-4 anim-up-in" style={{ animationDelay: '620ms' }}>
                         <h4 className="text-sm font-semibold text-oklch-neutral-900 mb-2">Contact us</h4>
                         <div className="space-y-2 text-sm text-oklch-neutral-700">
                           <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-oklch-primary-base">

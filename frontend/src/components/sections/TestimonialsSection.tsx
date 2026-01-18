@@ -118,7 +118,6 @@ const TestimonialsSection: React.FC = () => {
                         {testimonial.shortTestimonial}
                       </motion.p>
                     )}
-
                     {/* Long Text - visible on hover with text reveal animation */}
                     {isHeroHovered && (
                       <motion.p

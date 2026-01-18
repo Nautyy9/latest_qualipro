@@ -86,7 +86,7 @@ const WhyChooseUsSection: React.FC = () => {
 
       // Step nodes turn blue when crossing midpoint of the screen (lg+ only)
       nodeRefs.current.forEach((el, id) => {
-        console.log(el, id);
+
         if (!el) return;
         ScrollTrigger.create({
           trigger: el,
@@ -184,7 +184,7 @@ const WhyChooseUsSection: React.FC = () => {
 
         {/* Interactive Reasons Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lxl:grid-cols-4 gap-8 mb-16"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -197,7 +197,7 @@ const WhyChooseUsSection: React.FC = () => {
                 key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -4 }}
-                className="group border-transparent  h-full w-full mx-auto smd:w-3/4 md:w-full  cursor-pointer p-3  transition-all bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50  duration-500 hover:shadow-2xl"
+                className="group border-transparent h-full w-full mx-auto smd:w-3/4 md:w-full  cursor-pointer p-3  transition-all bg-gradient-to-br from-oklch-bg-light-blue/50 to-oklch-secondary-light/50 duration-500 hover:shadow-2xl"
               >
                 <CardContent className="flex bg-oklch-white-pure rounded-xl flex-col justify-between   w-full h-full text-center space-y-4 p-6">
                   <AnimatedIcon

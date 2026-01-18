@@ -5,6 +5,17 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
+import AnimatedIcon from '../components/ui/animated-icon';
+import {
+  pageHeadingStagger,
+  fadeDown,
+  fadeUp,
+  lineReveal,
+  contentItemStagger,
+  contentItemFadeUp,
+  fadeInFromLeft,
+  fadeInFromRight,
+} from '../utils/motion';
 
 type FormState = {
   name: string;
@@ -114,19 +125,54 @@ const Contact: React.FC = () => {
           <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-8 right-0 h-40 w-40 rounded-full bg-oklch-bg-light-blue/60 blur-2xl" />
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
+            variants={pageHeadingStagger}
             initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            animate="show"
+            className="space-y-4"
           >
-            <span className="inline-block mb-4 rounded-full border border-oklch-sky-base px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md">Get in Touch</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-oklch-primary-dark">Contact Us</h1>
-            <p className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto">
+            {/* 1. Pill "Get in Touch" - Fade Down */}
+            <motion.span
+              className="inline-block rounded-full border border-oklch-sky-base px-4 py-1 text-sm text-oklch-sky-dark shadow-oklch-sky-base/50 shadow-md"
+              variants={fadeDown}
+            >
+              Get in Touch
+            </motion.span>
+
+            {/* 2. Main Heading "Contact Us" - Fade Up */}
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-oklch-primary-dark"
+              variants={fadeUp(0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              Contact Us
+            </motion.h1>
+
+            {/* 3. Subtext - Fade Up */}
+            <motion.p
+              className="text-lg md:text-xl text-oklch-text-gray max-w-3xl mx-auto"
+              variants={fadeUp(0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               We're here to help. Reach out to us for any questions or inquiries about our services.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <div className="h-px w-24 bg-gradient-to-r from-transparent via-oklch-sky-base to-transparent" />
-            </div>
+            </motion.p>
+
+            {/* 4. Bottom Divider Line - Line Reveal */}
+            <motion.div
+              className="mt-4 flex justify-center"
+              variants={fadeUp(0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <motion.div
+                className="h-px w-24 bg-gradient-to-r from-transparent via-oklch-sky-base to-transparent"
+                variants={lineReveal}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -138,37 +184,39 @@ const Contact: React.FC = () => {
             {/* Left Column - Contact Methods with Interactive Cards */}
             <motion.div
               className="lg:col-span-1 space-y-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              variants={fadeInFromLeft(0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
             >
               <div className="sticky top-32 space-y-6">
-                <h2 className="text-3xl font-bold text-oklch-primary-dark mb-8">Reach Out</h2>
+                <motion.h2
+                  className="text-3xl font-bold text-oklch-primary-dark mb-8"
+                  variants={contentItemFadeUp}
+                >
+                  Reach Out
+                </motion.h2>
 
                 {contactMethods.map((method) => {
                   const Icon = method.icon;
                   return (
                     <motion.div
                       key={method.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: method.delay }}
+                      variants={contentItemFadeUp}
                       className="group"
                     >
-                      <div className="relative overflow-hidden rounded-2xl bg-oklch-white-pure border border-oklch-secondary-light/50 p-6 hover:border-oklch-secondary-light transition-all duration-300 cursor-pointer">
+                      <div className="relative  overflow-hidden rounded-2xl bg-oklch-white-pure border border-oklch-secondary-light/50 p-6 hover:border-oklch-secondary-light transition-all duration-300 cursor-pointer">
                         {/* Gradient overlay on hover */}
                         <div className="absolute inset-0 bg-gradient-to-r from-oklch-primary-base/[0.01] to-oklch-sky-base/[0.01]  group-hover:opacity-100 transition-opacity duration-300" />
 
-                        <div className="relative z-10">
-                          <div className="flex items-center gap-4 mb-4">
-                            <motion.div
-                              className="w-12 h-12 rounded-xl bg-oklch-primary-base  flex items-center justify-center flex-shrink-0"
-                              whileHover={{ scale: 1.1, rotate: 5 }}
-                            >
-                              <Icon className="w-6 h-6 text-oklch-white-pure" />
-                            </motion.div>
+                        <div className="  relative z-10">
+                          <div className=" inline-flex items-center gap-4 mb-4">
+                            <AnimatedIcon
+                              icon={<Icon className="w-6 h-6 text-oklch-white-pure" />}
+                              triggerOnScroll={true}
+                              size="md"
+                              className="bg-oklch-primary-base rounded-xl"
+                            />
                             <h3 className="font-semibold text-oklch-text-dark text-lg">{method.label}</h3>
                           </div>
                           <p className="text-oklch-text-gray group-hover:text-oklch-primary-dark transition-colors duration-300">{method.value}</p>
@@ -186,10 +234,7 @@ const Contact: React.FC = () => {
                 {/* Fun fact/stat card */}
                 <motion.div
                   className="mt-8 p-4 rounded-2xl  bg-gradient-to-tr from-oklch-primary-base/5 to-oklch-sky-base/5  "
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
+                  variants={contentItemFadeUp}
                 >
                   <div className="*:text-oklch-primary-dark bg-oklch-white-pure shadow-lg rounded-2xl p-6  hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
 
@@ -204,10 +249,10 @@ const Contact: React.FC = () => {
             {/* Right Column - Contact Form with Interactive Elements */}
             <motion.div
               className="lg:col-span-2"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              variants={fadeInFromRight(0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
             >
               <div
                 onMouseMove={handleMouseMove}
@@ -231,27 +276,26 @@ const Contact: React.FC = () => {
 
                 <div className="relative z-10">
                   {/* Form Header */}
-                  <div className="mb-10">
-                    <motion.h2
-                      className="text-4xl font-black text-oklch-primary-dark mb-3"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                    >
+                  <motion.div
+                    className="mb-10"
+                    variants={contentItemFadeUp}
+                  >
+                    <h2 className="text-4xl font-black text-oklch-primary-dark mb-3">
                       Send us a Message
-                    </motion.h2>
+                    </h2>
                     <div className="flex items-center gap-3">
                       <div className="h-1 w-12 bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base rounded-full" />
                       <p className="text-oklch-text-gray">We'll respond promptly to your inquiry</p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Success State */}
                   {submitted && (
                     <motion.div
                       className="mb-8 p-6 bg-gradient-to-r from-oklch-secondary-light to-oklch-secondary-lighter border border-oklch-secondary-lighter rounded-2xl"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      variants={contentItemFadeUp}
+                      initial="hidden"
+                      animate="show"
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-6 h-6 rounded-full bg-oklch-success-base flex items-center justify-center">
@@ -270,13 +314,16 @@ const Contact: React.FC = () => {
                     <input type="text" name="botField" autoComplete="off" tabIndex={-1} value={form.botField} onChange={(e) => setForm({ ...form, botField: e.target.value })} className="hidden" aria-hidden="true" />
 
                     {/* Grid Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <motion.div
+                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                      variants={contentItemStagger}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                    >
                       {/* Name */}
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
+                        variants={contentItemFadeUp}
                       >
                         <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Full Name *</label>
                         <Input
@@ -295,10 +342,7 @@ const Contact: React.FC = () => {
 
                       {/* Phone */}
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.15 }}
+                        variants={contentItemFadeUp}
                       >
                         <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Phone Number *</label>
                         <Input
@@ -315,14 +359,11 @@ const Contact: React.FC = () => {
                         />
                         {errors.phone && <p className="text-oklch-error-base text-xs mt-2 font-medium">Valid phone required</p>}
                       </motion.div>
-                    </div>
+                    </motion.div>
 
                     {/* Email */}
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 }}
+                      variants={contentItemFadeUp}
                     >
                       <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Email Address *</label>
                       <Input
@@ -342,10 +383,7 @@ const Contact: React.FC = () => {
 
                     {/* Subject */}
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.25 }}
+                      variants={contentItemFadeUp}
                     >
                       <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Subject *</label>
                       <Input
@@ -364,10 +402,7 @@ const Contact: React.FC = () => {
 
                     {/* Message */}
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 }}
+                      variants={contentItemFadeUp}
                     >
                       <label className="block text-sm font-bold text-oklch-neutral-900 mb-3">Your Message *</label>
                       <Textarea
@@ -387,10 +422,7 @@ const Contact: React.FC = () => {
 
                     {/* Submit Button */}
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.35 }}
+                      variants={contentItemFadeUp}
                       className="pt-4"
                     >
                       <Button
@@ -421,17 +453,31 @@ const Contact: React.FC = () => {
       <section className="py-16 md:py-24">
         <div className="container-max px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={contentItemStagger}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-oklch-neutral-900 mb-4">Prefer a Different Channel?</h2>
-            <p className="text-oklch-neutral-600 mb-8">No problem! Reach out through any of our contact methods. We're always happy to help.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-oklch-neutral-900 mb-4"
+              variants={contentItemFadeUp}
+            >
+              Prefer a Different Channel?
+            </motion.h2>
+            <motion.p
+              className="text-oklch-neutral-600 mb-8"
+              variants={contentItemFadeUp}
+            >
+              No problem! Reach out through any of our contact methods. We're always happy to help.
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={contentItemFadeUp}
+            >
               <Button variant="outline" className="rounded-xl h-12 px-8 border-2 border-oklch-secondary-light hover:border-oklch-secondary-light hover:bg-oklch-secondary-light/50 hover:shadow-xl transition-shadow duration-300">Schedule a Call</Button>
               <Button className="rounded-xl h-12 px-8 border-oklch-white-pure bg-gradient-to-r from-oklch-primary-base to-oklch-sky-base hover:from-oklch-primary-dark hover:to-oklch-sky-dark group/btn hover:shadow-xl transition-shadow duration-300">Explore Services <ArrowRight className="group-hover/btn:translate-x-2  transition-all  duration-300 group-hover/btn:-rotate-45 group-hover/btn:scale-125 w-5 h-5 ml-2" /></Button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

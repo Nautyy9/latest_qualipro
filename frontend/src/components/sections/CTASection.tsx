@@ -81,10 +81,10 @@ const CTASection: React.FC = () => {
                         <p className="text-oklch-pure-white text-sm mb-4">Healthcare Excellence Awaits</p>
                         <Link
                           to="/contact"
-                          className="bg-oklch-pure-white text-sm text-oklch-primary-base px-6 lg:px-2 xl:px-6 py-3 rounded-full font-bold hover:bg-oklch-secondary-lighter transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
+                          className="bg-oklch-pure-white text-sm text-oklch-primary-base px-6 lg:px-2 xl:px-6 py-3 rounded-full font-bold hover:bg-oklch-secondary-lighter transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2 group/btn "
                         >
                           Get Free Consultation
-                          <ArrowRight size={18} />
+                          <ArrowRight size={18} className='group-hover/btn:translate-x-2  transition-all  duration-300 group-hover/btn:-rotate-45 group-hover/btn:scale-125' />
                         </Link>
                       </div>
                     </div>
@@ -112,7 +112,7 @@ const CTASection: React.FC = () => {
                       <p className="text-oklch-text-gray text-sm">Speak with our NABH specialists instantly</p>
                       <a
                         href="tel:+919876543210"
-                        className=" bg-oklch-secondary-light hover:bg-oklch-secondary-lighter w-2/3 text-oklch-primary-base font-semibold py-3 px-6 rounded-xl transition-all duration-300 group/btn inline-flex items-center justify-center"
+                        className=" bg-oklch-secondary-light hover:bg-oklch-secondary-lighter mx-auto sm:w-2/3 text-oklch-primary-base font-semibold py-3 px-6 rounded-xl transition-all duration-300 group/btn inline-flex items-center justify-center"
                       >
                         +91 9876543210
                         <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-2 duration-300 transition-all group-hover/btn:-rotate-45 group-hover/btn:scale-110" />
@@ -177,7 +177,7 @@ const CTASection: React.FC = () => {
                     <p className="text-oklch-text-gray text-sm">Get detailed proposals & documentation</p>
                     <a
                       href="mailto:info@qualipro.healthcare"
-                      className=" bg-oklch-secondary-light hover:bg-oklch-secondary-lighter  text-oklch-primary-base font-semibold py-3 px-6 rounded-xl transition-all duration-300 text-sm inline-flex items-center justify-center group/btn"
+                      className=" bg-oklch-secondary-light hover:bg-oklch-secondary-lighter  text-oklch-primary-base font-semibold py-3 px-6 rounded-xl transition-all duration-300 text-sm flex items-center justify-center group/btn"
                     >
                       info@qualipro.healthcare
                       <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-2 duration-300 transition-all group-hover/btn:-rotate-45 group-hover/btn:scale-110" />
